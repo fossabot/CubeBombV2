@@ -1,0 +1,35 @@
+W21 Theme for Roundcube
+=======================
+
+W21 is a Roundcube theme for desktop browsers. To set up your Roundcube to be accessible from both desktop and mobile browsers, you should also install W21 Mobile and the NutsMail Theme Selector plugin.
+
+Roundcube compatibility
+-----------------------
+
+The theme has been tested and is fully compatible with Roundcube 0.6, 0.7 and 0.8. It might not work properly on earlier or later versions of Roundcube. The theme is compatible with all Roundcube languages.
+
+Browser compatibility
+---------------------
+
+The theme is compatible with all modern desktop browsers. To use the theme on mobile devices, install its mobile counterpart, W21 Mobile, and the NutsMail Theme Selector plugin.
+
+Installation
+------------
+
+In order to install the theme, copy the folders "skins" and "plugins" to your Roundcube installation.
+
+To set the theme as default for the login screen, edit the file "config/main.inc.php" and set the variable $rcmail_config['skin'] like this:
+
+$rcmail_config['skin'] = "w21";
+
+The users will be able to select the theme by going to Settings -> User Interface.
+
+License
+-------
+
+The theme is covered by a commercial license agreement (see the file LICENSE for details). In order to use the theme you must purchase a license from Tecorama (http://nutsmail.com).
+
+Copyright and credits
+---------------------
+
+Graphical Design Copyright (c) 2011 Tecorama

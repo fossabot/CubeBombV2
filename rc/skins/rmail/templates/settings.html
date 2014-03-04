@@ -1,0 +1,45 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body class="noscroll">
+
+<roundcube:include file="/includes/header.html" />
+
+<div id="mainscreen" class="offset">
+
+<div id="tabswitcher">
+	<select onchange="rcmail.command('switch-task',this.value,this,event)">
+		<option value="mail">Mail</option>
+		<option value="addressbook">Contacts</option>
+		<option value="settings" selected="selected">Settings</option>
+	</select>
+</div>
+
+<roundcube:include file="/includes/settingstabs.html" />
+
+<div id="settings-right">
+
+<div id="sectionslist" class="uibox listbox">
+<div class="scroller">
+	<roundcube:object name="sectionslist" id="sections-table" class="listing" />
+</div>
+</div>
+
+<div id="preferences-box" class="uibox contentbox">
+	<div class="iframebox">
+		<roundcube:object name="prefsframe" id="preferences-frame" style="width:100%; height:100%" frameborder="0" />
+	</div>
+	<roundcube:object name="message" id="message" class="statusbar" />
+</div>
+
+</div>
+
+</div>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

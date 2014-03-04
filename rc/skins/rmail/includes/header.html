@@ -1,0 +1,58 @@
+<div id="header">
+<div id="topline">
+	<div class="topleft">
+		<roundcube:button name="about" type="link" label="about" class="about-link" onclick="UI.show_about(this);return false" />
+		<roundcube:if condition="config:support_url" />
+		<a href="<roundcube:var name='config:support_url' />" target="_blank" class="support-link" id="supportlink"><roundcube:label name="support" /></a>
+		<roundcube:endif />
+	</div>
+	<div class="topright">
+	<span class="username"><roundcube:object name="username" /></span>
+	<roundcube:button command="logout" label="logout" class="button-logout" />
+	</div>
+</div>
+
+<div id="topnav">
+	<div id="taskbar" class="topright">
+	<roundcube:container name="taskbar" id="taskbar" />
+	</div>
+
+	<a href="/?_task=mail">
+		<roundcube:if condition="config:domain_name && config:custom_logo" />
+			<img id="toplogo" border="0" class="customLogo" src="/../../data/logo/<roundcube:var name='config:domain_name' />/<roundcube:var name='env:skin' />.png" alt="" />
+		<roundcube:else />
+			<roundcube:object name="logo" src="/images/roundcube_logo.png" id="toplogo" border="0" alt="Logo" />
+		<roundcube:endif />
+	</a>
+
+<roundcube:if condition="env:task == 'mail'" />
+	<div id="messagesearchtools">
+<roundcube:endif />
+<roundcube:if condition="env:task == 'settings'" />
+	<div id="messagesearchtools-settings">
+<roundcube:endif />
+<roundcube:if condition="env:task == 'addressbook'" />
+	<div id="messagesearchtools-addressbook">
+<roundcube:endif />
+
+<!-- search filter -->
+<div id="searchfilter">
+        <roundcube:object name="searchfilter" class="searchfilter decorated" />
+</div>
+
+<!-- search box -->
+<div id="quicksearchbar">
+<roundcube:object name="searchform" id="quicksearchbox" />
+<roundcube:button name="searchmenulink" id="searchmenulink" class="iconbutton searchoptions" onclick="UI.show_popup('searchmenu');return false" title="searchmod" content=" " />
+<roundcube:button command="reset-search" id="searchreset" class="iconbutton reset" title="resetsearch" content=" " />
+<a onclick="return rcmail.command('search',document.getElementById('quicksearchbox').value,this,event)" href="#" id="curleezsearch" class="button">&nbsp;</a>
+</div>
+
+</div>
+
+
+
+</div>
+
+<br style="clear:both" />
+</div>

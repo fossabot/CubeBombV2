@@ -1,0 +1,23 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+</head>
+<body class="ui-widget-content">
+
+<div class="readtext">
+<roundcube:object name="aboutcontent" />
+
+<h2 class="sysname">Roundcube Webmail <roundcube:object name="version" /></h2>
+<p class="copyright">Copyright &copy; 2005-2012, The Roundcube Dev Team</p>
+<p class="copyright">Skin: <roundcube:include file="/VERSION" />, Copyright &copy; 2013, Sboulema</p>
+</div>
+
+<div class="readtext">
+<h3><roundcube:label name="installedplugins" en_US="Installed plugins" /></h3>
+<roundcube:object name="pluginlist" id="pluginlist" class="records-table" />
+</div>
+
+</body>
+</html>

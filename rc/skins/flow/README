@@ -1,0 +1,32 @@
+Roundcube Webmail Skin "Flow"
+==============================
+
+This Roundcube skin package contains styles for skin "Flow"
+
+Flow is released as CC0 Public Domain By JL Griffin
+
+Flow is a modified version of "Larry" for roundcube by FLINT
+ 
+Modification was designed to model the ZPanel Flow Skin By Zen
+ 
+All rights to the aforementioned works belong to their respective owners.
+
+=====================================
+Original Larry Copyright Info is intact below per CC3 SA requirements. 
+
+
+For information about building or modifiying Roundcube skins please visit
+http://trac.roundcube.net/wiki/Doc_Skins
+
+Screendesign by FLINT / Büro für Gestaltung, Bern, Switzerland
+http://bueroflint.com
+
+
+LICENSE
+-------
+The contents of this folder are subject to the Creative Commons
+Attribution-ShareAlike License. It is allowed to copy, distribute,
+transmit and to adapt the work by keeping credits to the original
+autors in the README file.
+See http://creativecommons.org/licenses/by-sa/3.0/ for details.
+

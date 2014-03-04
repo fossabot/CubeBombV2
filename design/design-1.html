@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="/js/analytics.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="/js/jquery.color-2.1.2.min.js"></script>
+        <script src="/js/jquery.tipsy.js"></script>
+        <script type="text/javascript">
+            var isAdminVisible = false;
+            
+            $(document).ready(function(){
+                $("#sidebar .block > .button").mouseenter(function(){
+                    $(this).find(".rightArrow").css({opacity: 1});
+                    $(this).find(".sprite").removeClass("sprite").addClass("sprite-white");
+                }).mouseleave(function(){
+                    $(this).find(".rightArrow").css({opacity: 0});
+                    $(this).find(".sprite-white").removeClass("sprite-white").addClass("sprite");
+                });
+                
+                $("#content .right .actions a").mouseenter(function(){
+                    $(this).find(".sprite-rightPointer").removeClass("sprite").addClass("sprite-white");
+                }).mouseleave(function(){
+                    $(this).find(".sprite-rightPointer").removeClass("sprite-white").addClass("sprite");
+                });
+                
+                $("#content .right .friends .thumbnail").mouseenter(function(){
+                    $(this).find(".details").stop().animate({marginTop: 56}, 110);
+                }).mouseleave(function(){
+                    $(this).find(".details").stop().animate({marginTop: 80}, 110);
+                });
+
+                $("#content .left .inventory .item").mouseenter(function(){
+                    $(this).find(".details").stop().animate({marginTop: 73}, 110);
+                }).mouseleave(function(){
+                    $(this).find(".details").stop().animate({marginTop: 97}, 110);
+                });
+                
+                $("#adminDropdownButton").click(function(){                    
+                    if ($(this).find(".text").text() == "Administration [Expand]"){
+                        $("#adminDropdown").stop().slideDown();
+                        $(this).find(".text").text("Administration [Close]");
+                    }else{
+                        $("#adminDropdown").stop().slideUp();
+                        $(this).find(".text").text("Administration [Expand]");
+                    }
+                });
+                
+                $("#nav .time").tipsy({gravity: "s", delayIn: 1000});
+                $("#content .right .friends .thumbnail").tipsy({gravity: "s"});
+            });
+        </script>
+        
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/profile.css">
+        <link rel="stylesheet" type="text/css" href="/css/tipsy.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+        
+        <title>CubeBomb 2.0 Redesign</title>
+    </head>
+    
+    <body>
+        <div id="logo"></div>
+        <div id="wrapper">
+            <div id="nav" class="shadow">
+                <div class="account">StuffMaker</div>
+                <a href="#">Shop</a>
+                <a href="#">Members</a>
+                <a href="#">Forum</a>
+                <a href="#">Dropoff</a>
+                <a href="#">Help</a>
+                <div class="time" title="CubeBomb Time is UTC">3:41 PM</div>
+                <a href="#" style="float: right;">Log out</a>
+            </div>
+            <div id="sidebar" class="shadow">
+                <div class="avatar" style="background-image: url(/images/sm.png);"></div>
+                <div class="block">
+                    <div class="info">
+                        <div class="sprite sprite-cubes"></div>
+                        <span class="counter">343,207</span>
+                        <span class="hint">Cubes</span>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-message"></div>
+                        <span class="hint">Messages</span>
+                        <span class="counter">14</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-burst"></div>
+                        <span class="hint">Notifications</span>
+                        <span class="counter">2</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="rule"><div class="text">Quick Links</div></div>
+                    
+                    <div class="button">
+                        <div class="sprite sprite-pencil"></div>
+                        <span class="title">Edit Profile</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-gear"></div>
+                        <span class="title">Settings</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-tag"></div>
+                        <span class="title">Inventory</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-foot"></div>
+                        <span class="title">Friend Activity</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="rule"><div class="text">Moderation</div></div>
+                    
+                    <div class="button">
+                        <div class="sprite sprite-camera"></div>
+                        <span class="hint">Images</span>
+                        <span class="counter">7</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-flag"></div>
+                        <span class="hint">Reports</span>
+                        <span class="counter">11</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="rule"><div class="text">Administration</div></div>
+                    
+                    <div class="button">
+                        <div class="sprite sprite-computer"></div>
+                        <span class="title">Admin Panel</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-key"></div>
+                        <span class="title">Page Lock</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-clock"></div>
+                        <span class="title">Page History</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <div class="sprite sprite-chat"></div>
+                        <span class="hint">Notes</span>
+                        <span class="counter">2</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="rule"><div class="text">Friends Online</div></div>
+                    
+                    <div class="button">
+                        <img class="icon" src="/images/sm.png" />
+                        <span class="title">StuffMaker</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <img class="icon" src="/images/sm.png" />
+                        <span class="title">StuffMaker</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <img class="icon" src="/images/sm.png" />
+                        <span class="title">StuffMaker</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <img class="icon" src="/images/sm.png" />
+                        <span class="title">StuffMaker</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <img class="icon" src="/images/sm.png" />
+                        <span class="title">StuffMaker</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                    <div class="button">
+                        <img class="icon" src="/images/sm.png" />
+                        <span class="title">StuffMaker</span>
+                        <div class="rightArrow" style="opacity: 0;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div class="left">
+                    <div class="username">
+                        <span class="title">StuffMaker</span>
+                        <span class="seen">Last seen Dec. 31st, 2011</span>
+                    </div>
+                    <div class="description">
+                        Profile Description goes here!<br />
+                        <br />
+                        <br />
+                        More about me yadda yada more text to fill up some space.<br />
+                        This is just a design. Nothing works yet.<br />
+                        Look at all of this awesomeness.<br /><br />
+                        Boom hit the bottom
+                    </div>
+                    <div class="subtitle">Inventory</div>
+                    <div class="inventory shadow">
+                        <div class="topbar">
+                            <a href="#" class="selected">Official Items (132)</a>
+                            <a href="#">User Items (9)</a>
+                            <div class="sort"></div>
+                        </div>
+                        
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2200</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2100</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2210</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2220</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2230</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2240</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2250</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2260</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2270</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2280</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2290</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2201</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2202</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2203</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2204</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2205</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2206</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2207</div>
+                        </div></a>
+                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                                <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2208</div>
+                        </div></a>
+                        
+                        <a href="#">
+                            <div class="nextBlock">
+                                <img class="icon" src="/images/icons/large/black/rightPointer.png" />
+                                <div>Page 1/10</div>
+                            </div>
+                        </a>
+                        <div style="clear: both;"></div>
+                    </div>
+                    
+                    <div class="subtitle">Shoutbox</div>
+                    
+                    <div class="shoutbox shadow">
+                        <div class="comment">
+                            <div class="avatar"></div>
+                            <div class="content"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="avatar shadow" style="background-image: url(/images/sm.png);"></div>
+                    
+                    <div class="subtitle">Actions</div>
+                    
+                    <div class="actions shadow">
+                        <a href="#">Send Message <div class="sprite sprite-rightPointer"></div></a>
+                        <a href="#">Friend Request <div class="sprite sprite-rightPointer"></div></a>
+                        <a href="#">Block User <div class="sprite sprite-rightPointer"></div></a>
+                        <a href="#">Subscribe <div class="sprite sprite-rightPointer"></div></a>
+                        
+                        <div id="adminDropdownButton" style="height: 40px; cursor: pointer;">
+                            <div class="rule"><div class="text">Administration [Expand]</div></div>
+                        </div>
+                        
+                        <div id="adminDropdown" style="display: none;">
+                            <a href="#">Send Notification <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Edit Profile <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Force Name Change <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Force Logout <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Actions History <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Clear Avatar <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Change Abilities <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Related Accounts <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Actions History <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Ban User <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Delete Account <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">IP Ban <div class="sprite sprite-rightPointer"></div></a>
+                        </div>
+                    </div>
+                    
+                    <div class="subtitle">Info</div>
+                    
+                    <div class="stats shadow">
+                        <div style="color: #fff; background-color: #c5382a;">Administrator</div>
+                        <div>Member since Feb. 5th, 2010</div>
+                        <div>421,353 profile views</div>
+                        <div>1,321 forum posts</div>
+                    </div>
+                    
+                    <div class="subtitle">Friends (73)</div>
+                    
+                    <div class="friends shadow">
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=341);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=308);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=317);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=12);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=444);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=372);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=444);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=1);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=341);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=308);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=317);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nextBlock">
+                                <img class="icon" src="/images/icons/large/black/rightPointer.png" />
+                                <div>Page 1/7</div>
+                            </div>
+                        </a>
+                        
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

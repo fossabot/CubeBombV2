@@ -1,0 +1,1523 @@
+* {
+	text-shadow: none !important;
+	box-shadow: none !important;
+	-o-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	border-radius: 0 !important;
+}
+
+/* iehacks */
+
+input.button,
+.formbuttons input.button,
+.formbuttons input.button:active,
+input.button.mainaction,
+input.button.mainaction:active,
+a.button,
+a.button.pressed,
+a.button:active,
+input.button:active,
+.pagenav.dark a.button,
+.pagenav.dark a.button.pressed,
+#message.statusbar,
+.ui-dialog.popupmessage .ui-dialog-titlebar,
+.ui-dialog.popupmessage .ui-widget-content,
+#topnav,
+.records-table tr.selected td,
+.contentbox .boxtitle,
+body.iframe .boxtitle,
+#login-form input.button,
+#login-form input.button:active,
+.toolbar a.button,
+a.menuselector,
+a.menuselector:active,
+.googie_list td.googie_list_onhover,
+ul.toolbarmenu li a.active:hover,
+#rcmKSearchpane ul li.selected,
+.tabsbar .tablink,
+.tabsbar .selected a,
+.contactfieldgroup,
+.contactfieldgroup legend,
+#messagelistfooter,
+#mailboxlist li.mailbox .unreadcount,
+#mailboxlist li.mailbox.selected > a .unreadcount,
+#messageheader, #partheader, #composeheaders,
+#previewheaderstoggle {
+	filter: none;
+}
+
+/* styles */
+
+body {
+	color: #000;
+	background: #fff;
+  font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+
+a {
+	color: #0069a6;
+}
+
+a:visited {
+	color: #0186ba;
+}
+
+fieldset {
+	border: 1px solid #C2E2F9;
+}
+
+select {
+	color: #333333;
+	border: 1px solid #C5C5C5;
+	background: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  border: 1px solid #666666;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input.button:focus,
+textarea:focus {
+	background: white;
+	border: 1px solid #666666;
+}
+
+input.button {
+  color: #2c7dcf;
+	padding: 5px 16px;
+  background: #f4fbff;
+  border: 1px solid #aaccee;
+	font-size: 11px;
+}
+
+input.button.mainaction {
+  background: #E5F4FC;
+  color: #2c7dcf;
+}
+
+.formbuttons input.button {
+	color: #444444;
+	padding: 5px 16px;
+  	background: #F5F5F5;
+	font-size: 11px;
+	border: 1px solid #c5c5c5 !important;
+}
+
+input.button.mainaction:hover,
+input.button.mainaction:focus {
+  background: #C52727;
+	color: white;
+	border: 1px solid #B0281A;
+}
+
+.formbuttons input.button:hover,
+.formbuttons input.button:focus, {
+
+}
+
+.formbuttons input.button:active {
+	color: #2c7dcf;
+	background: #DBF0FC;
+}
+
+input.button.mainaction {
+	background: #D14836;
+	background-image: -moz-linear-gradient(center top , #DD4B39, #D14836); 
+	color: white;
+  font-weight: bold;
+border: none !important;
+}
+
+input.button.mainaction:active {
+  font-weight: bold;
+  border: 1px solid #aaccee;
+}
+
+input.button[disabled],
+input.button[disabled]:hover,
+input.button.mainaction[disabled] {
+	color: #aaa !important;
+}
+
+#tabswitcher select {
+	background: transparent;
+	border: none;
+	color: #DD4B39;
+	cursor: pointer;
+	font-size: 14pt;
+	margin-right: 28px;
+	-webkit-appearance: none;
+	height: 25px;
+	width: 110px;
+}
+
+#tabswitcher select option {
+	font-size: 11pt;
+	padding-left: 15px;
+	padding-top: 5px;
+	color: black;
+}
+
+#tabswitcher {
+	width: 89px;
+	overflow: hidden;
+	background: url(images/arrow_down_tlp.png) no-repeat right white;
+}
+
+#curleezbuttons {
+	margin-left: 172px;
+	margin-top: -25px;
+}
+
+#rcmbtnsyncgoogle {
+	position: relative;
+	left: 265px;
+	top: -26px;
+}
+
+#curleezsearch {
+	background: url("images/search.png") no-repeat scroll center center #4D90FE;
+    	border: 1px solid #3079ED;
+    	color: #FFFFFF !important;
+	padding: 5px 35px;
+}
+
+#curleezcomposebuttons {
+	position: relative;
+	left: 260px;
+	top: -25px;
+	width: 100px;
+}
+
+#submitsearch {
+	background-color: #4D90FE;
+    	background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+    	border: 1px solid #3079ED;
+	width: 75px;
+	height: 26px;
+	position: relative;
+	top: 2px;
+	cursor: pointer;
+}
+
+#submitsearch span {
+	background: url(images/search.png) no-repeat center transparent;
+	width: 16px;
+}
+
+.about-link {
+	color: black !important;
+}
+
+.curleezmessagemailbox {
+	top: 45px !important;
+}
+
+/** link buttons **/
+
+a.button {
+	color: #525252;
+	text-shadow: none;
+	border: none;
+	background: transparent;
+}
+
+a.button:focus,
+input.button:focus {
+	border-color: #4fadd5;
+}
+
+label.disabled,
+a.button.disabled {
+	color: #999;
+}
+
+a.button.disabled,
+input.button.disabled,
+input.button[disabled],
+a.button.disabled:hover,
+input.button.disabled:hover,
+input.button[disabled]:hover {
+	border-color: none;
+}
+
+.pagenav.dark a.button {
+	border-color: transparent;
+	background: transparent;
+}
+
+.pagenav.dark a.button.pressed {
+	background: #fff;
+}
+
+a.iconlink {
+	color: #1155CC;
+}
+
+/*** message bar ***/
+
+#message div.loading,
+#message div.warning,
+#message div.error,
+#message div.notice,
+#message div.confirmation,
+#message-objects div.notice {
+	color: #2F569E;
+	padding: 6px 30px 6px 25px;
+	font-weight: normal;
+}
+
+#message div.warning {
+	color: #960;
+}
+
+#message div.error {
+	color: #cf2734;
+}
+
+#message div.confirmation {
+	color: #093;
+}
+
+#message.statusbar {
+	border-top: none;
+	background: #fff;
+}
+
+#message .topleft {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+}
+
+#message .topleft a {
+	color: #5AA6ED;
+	font-size: 90%;
+}
+
+.ui-dialog.warning .ui-dialog-title {
+	color: #960;
+}
+
+.ui-dialog.error .ui-dialog-title {
+	color: #cf2734;
+}
+
+.ui-dialog.confirmation .ui-dialog-title {
+	color: #093;
+}
+
+.ui-dialog.popupmessage .ui-dialog-titlebar {
+	padding: 8px 1em 4px 1em;
+	background: #B5CEF2;
+	background: -moz-linear-gradient(top, #ddecfe 0%, #8eb2e6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ddecfe), color-stop(100%,#8eb2e6));
+	background: -o-linear-gradient(top, #ddecfe 0%, #8eb2e6 100%);
+	background: -ms-linear-gradient(top, #ddecfe 0%, #8eb2e6 100%);
+	background: linear-gradient(top, #ddecfe 0%, #8eb2e6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ddecfe', EndColorStr='#8eb2e6');
+}
+
+.ui-dialog.popupmessage .ui-widget-content {
+	font-size: 12px;
+	background: #eee;
+	background: -moz-linear-gradient(top, #eee 0%, #dcdcdc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eee), color-stop(100%,#dcdcdc));
+	background: -o-linear-gradient(top, #eee 0%, #dcdcdc 100%);
+	background: -ms-linear-gradient(top, #eee 0%, #dcdcdc 100%);
+	background: linear-gradient(top, #eee 0%, #dcdcdc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#dcdcdc');
+}
+
+/*** basic page layout ***/
+
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+  height: 50px;
+  background: #F5F5F5;
+	border-bottom: 2px solid #E5E5E5;
+}
+
+#topline {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	background: transparent;
+	height: 25px;
+	font-weight: bold;
+	color: #666666;
+	border: none;
+}
+
+#topline a.button-logout {
+	color: #ccc;
+}
+
+#topnav {
+	margin: 0 0 0 145px;
+	height: 50px;
+	overflow: hidden;
+	padding: 0;
+	background: transparent;
+}
+
+#topline a,
+#topnav a {
+	color: #666666 !important;
+}
+
+#topline .topleft a {
+	color: #5AA6ED !important;
+	font-weight: normal;
+}
+
+#topline .topright {
+	padding-top: 2px;
+}
+
+#toplogo {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+
+#topline .username {
+	background: none;
+
+}
+
+#taskbar {
+	padding: 0;
+	margin: 0;
+	float: none;
+}
+
+#taskbar a {
+	display: inline-block;
+	height: 19px;
+	padding: 8px 8px 4px 0;
+	margin-right: 5px;
+	border: 1px solid #E5E5E5;
+	border-bottom: none;
+	color: #1F75CC;
+	background: #E5E5E5;
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
+	float: left;
+}
+
+#taskbar a.button-selected {
+	height: 20px;
+	color: #000;
+	background: #fff;
+	border: 2px solid #E5E5E5;
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
+}
+
+#taskbar a.button-selected:hover {
+	border: 2px solid #ACE;
+}
+
+#taskbar a:hover
+{
+	color: #000;
+}
+
+#taskbar a span.button-inner {
+	display: inline-block;
+	font-size: 100%;
+	font-weight: bold;
+	text-shadow: none;
+	padding: 0 0 0 34px;
+	height: 19px;
+	background: url(images/buttons.png) -1000px 0 no-repeat;
+}
+
+#taskbar a.button-help span.button-inner {
+	background: url(images/iconHelp.png) 8px 0 no-repeat !important;
+}
+
+#taskbar a.button-logout span.button-inner {
+	background: url(images/iconLogout.png) 8px 0 no-repeat !important;
+}
+
+#taskbar a.button-mail span.button-inner {
+	background-position: 0 2px !important; /* we don't want to change images on hover, so !important */
+}
+
+#taskbar a.button-addressbook span.button-inner {
+	background-position: 0 -48px !important;
+}
+
+#taskbar a.button-settings span.button-inner {
+	background-position: 0 -96px !important;
+}
+
+#taskbar a.button-calendar span.button-inner {
+	background-position: 0 -144px !important;
+}
+
+#mainscreen {
+	position: absolute;
+	top: 70px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+}
+
+#mainscreen.offset {
+	top: 65px;
+}
+
+.uibox {
+	background: #fff;
+}
+
+.listbox {
+	background: white;
+}
+
+.boxtitle,
+.uibox .listing thead td {
+	border-bottom: 1px solid #EDEDED;
+	padding-top: 6px;
+}
+
+#labels-title {
+	display: none;
+}
+
+.uibox .boxtitle,
+.uibox .listing thead td {
+	background: white;
+	color: #000;
+	height: 14px;
+	padding: 6px 8px 6px 8px;
+}
+
+.listbox .listitem,
+.listbox .tablink,
+.listing tbody td,
+.listing li {
+	border-top: none;
+	border-bottom: 1px solid white;
+}
+
+.listbox .listitem a,
+.listbox .tablink a,
+.listing tbody td,
+.listing li a {
+	color: #000;
+}
+
+.listbox .listitem.selected,
+.listbox .tablink.selected,
+.listbox .listitem.selected > a,
+.listbox .tablink.selected > a,
+.listing tbody tr.unfocused td,
+.listing tbody tr.selected td,
+.listing li.selected,
+.listing li.selected > a {
+	color: #000;
+	background-color: #FFFFCC;
+}
+
+ul.listing li {
+	background-color: transparent;
+}
+
+ul.listing li.droptarget,
+table.listing tr.droptarget td {
+	background-color: #e8e798;
+}
+
+.listbox .boxfooter {
+	border-top: 1px solid #E5E5E5;
+	background: white;
+	height: 27px;
+}
+
+.boxfooter .listbutton {
+	border-right: none;
+	background: transparent;
+	padding: 0;
+	width: 40px;
+}
+
+.boxfooter .listbutton .inner {
+	position: relative;
+	width: 40px;
+	height: 27px;
+}
+
+.boxfooter .listbutton.add .inner {
+	background-positio: 5px -1301px;
+}
+
+.boxfooter .listbutton.delete .inner {
+	background-position: 5px -1342px;
+}
+
+.boxfooter .countdisplay {
+	color: #545454;
+	padding-top: 0;
+	top: 7px;
+}
+
+table.records-table {
+	border: 1px solid #bbd3da;
+}
+
+.records-table thead td {
+  padding: 0 4px 0 2px;
+  vertical-align: middle;
+  color: #333333;
+  background: white;
+	font-size: 12px;
+	font-weight: normal;
+	border-left: none;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+#messagelist thead tr td.sortedASC a,
+#messagelist thead tr td.sortedDESC a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.records-table thead td.sortedASC,
+.records-table thead td.sortedDESC {
+	background-position: 0 -30px;
+}
+
+.records-table thead td a {
+	color: #333333;
+}
+
+.records-table thead td span {
+	color: #777777;
+}
+
+.records-table tbody td {
+	padding: 4px 7px;
+	border-bottom: 1px solid #EBEBEB;
+	border-left: none;
+}
+
+.records-table tr.selected td {
+	background: #FFFFCC !important;
+	color: black !important;
+}
+
+.records-table tr.selected td a,
+.records-table tr.selected td span {
+	color: black !important;
+}
+
+.records-table tr.unfocused td {
+	color: #000 !important;
+	background: #ddd !important;
+}
+
+.records-table tr.unfocused td a,
+.records-table tr.unfocused td span {
+	color: #000 !important;
+}
+
+.records-table tr.deleted td,
+.records-table tr.deleted td a {
+	color: #ccc !important;
+}
+
+.contentbox .boxtitle,
+body.iframe .boxtitle {
+	color: #000;
+	border-bottom: 1px solid #E5E5E5;
+	background: white;
+}
+
+body.iframe .footerleft.floating:before {
+	background: none;
+	border-bottom: 1px solid #97B9E8;
+}
+
+body.iframe .footerleft.floating {
+	background: #fff;
+
+	/* remove these two settings to make the button bar float and be always visible when the contents scroll */
+	position: static;
+	width: auto;
+}
+
+body.iframe .footerleft.floating input {
+	margin-top: 8px;
+}
+
+.propform fieldset fieldset legend {
+	color: #666;
+}
+
+ul.proplist li,
+table.propform td {
+	background: transparent;
+	border-bottom: 1px solid #eee;
+}
+
+table.propform td.title {
+	color: #333;
+}
+
+/*** Login form ***/
+
+#loginPage {
+	background: white;
+	padding: 0;
+	margin: 0;
+}
+
+#login-form {
+	width: 100%;
+	margin: 0;
+  padding: 155px 0 100px 0;
+  border: none;
+}
+
+#login-form .box-inner {
+  margin: 0 auto 0 auto;
+	padding: 0;
+  width: 420px;
+  border: 1px solid #C5C5C5;
+  background: #F1F1F1;
+}
+
+#login-form #logo {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+}
+
+#login-header {
+	background: none repeat scroll 0 0 #F1F1F1;
+    	border-bottom: 1px solid #E5E5E5;
+    	height: 71px;
+}
+
+#login-logo {
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+#login-form .welcome {
+	border-bottom: 1px solid #C5C5C5;
+	color: #000;
+	padding: 10px;
+	font-weight: bold;
+}
+
+#login-form form {
+	padding: 30px 30px 0 30px;
+}
+
+#login-form .box-bottom {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	min-height: 50px;
+	background: none;
+	text-align: center;
+}
+
+#login-form .box-bottom #message {
+	margin-top: 0;
+}
+
+#login-form td.title {
+	color: #000;
+	padding: 6px 5px 6px 0;
+}
+
+#login-form td.input {
+	padding: 6px 0;
+}
+
+#login-form table
+{
+  width: 100%;
+  margin: auto;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+  border: 1px solid;
+  border-color: #e4e4ee;
+  border-top-color: #aaadb2;
+  color: #333333;
+  background-color: #ffffff;
+	padding: 2px;
+}
+
+#login-form table input#rcmloginuser {
+  background: #fff;
+}
+
+#login-form table input#rcmloginpwd {
+  background: #fff;
+}
+
+#login-form table input#rcmloginhost {
+  background: #fff;
+}
+
+#login-form input.button {
+	color: white;
+	padding: 5px 16px;
+	background: #4D90FE;
+	background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);	
+	border: 1px solid #3079ED;
+	font-size: 11px;
+}
+
+#login-form input.button:hover,
+#login-form input.button:focus,
+#login-form input.button:active {
+	background: #357AE8;
+}
+
+#login-form p.formbuttons {
+	text-align: center;
+}
+
+#login-form #message {
+	margin-top: 30px;
+	min-height: 40px;
+	padding: 5px 25px;
+	text-align: center;
+}
+
+#login-form #message div {
+	display: inline-block;
+	padding-right: 0;
+	color: #000;
+}
+
+#loginTitle {
+	text-align: left;
+	padding: 20px 0 40px 0;
+	margin-bottom: 40px;
+	font-weight: bold;
+	font-size: 22px;
+	background: url(images/loginTitle.png) left bottom no-repeat;
+	font-family: arial, helvetica;
+}
+
+#loginGetSupport {
+	text-align: left;
+	padding-top: 10px;
+}
+
+#loginGetSupport a {
+	color: #AFAFAF;
+	text-decoration: none;
+}
+
+#loginGetSupport a:hover {
+	text-decoration: underline;
+}
+
+#cornerLogoContainer {
+	position: fixed;
+	bottom: 20px;
+	right: 10px;
+	z-index: 1;
+}
+
+#cornerLogoFull {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: none;
+	text-align: center;
+	z-index: 1;
+}
+
+#login-form #bottomline {
+	position: relative;
+	top: 20px;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+
+#login-form #bottomline a {
+	color: #8EBBCE;
+	text-decoration: none;
+}
+
+#login-form #bottomline a:hover {
+	text-decoration: underline;
+}
+
+
+/*** quicksearch **/
+
+#quicksearchbar {
+	right: 10px;
+	top: -7px;
+}
+
+#quicksearchbar input {
+	background: #fff;
+	border-color: #E5E5E5;
+	font-weight: normal;
+}
+
+/*** toolbar ***/
+
+.toolbar .spacer {
+	display: none;
+}
+
+.toolbar a.button {
+	display: inline-block;
+	min-width: 24px;
+	max-width: 24px;
+	height: 0;
+	padding: 24px 0 0 0;
+	margin: 0 4px 0 0;
+	overflow: hidden;
+}
+
+.toolbar span.dropbutton {
+	display: inline-block;
+	width: 40px;
+}
+
+.dropbutton .dropbuttontip {
+	width: 12px;
+	left: 26px;
+	right: auto;
+}
+
+.toolbar a.button.spellcheck,
+.toolbar a.button.reply-all,
+.toolbar a.button.forward {
+	min-width: 24px;
+}
+
+.toolbar a.button.spellcheck.selected {
+	color: #2056AD;
+}
+
+a.menuselector {
+	border: 1px solid #E5E5E5;
+	background: #fff;
+}
+
+a.menuselector:active {
+}
+
+select.decorated option {
+	color: #000;
+	background: #fff;
+	border-top: none;
+	border-bottom: none;
+}
+
+/*** quota indicator ***/
+
+#quotadisplay {
+	display: none;
+	background: none;
+}
+
+#quota
+{
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 100px;
+}
+
+.quota_text {
+  text-align: center;
+  font-size: 10px;
+  color: #666;
+  cursor: default;
+	display: block;
+	border: 1px solid #ccc;
+	width: 100px;
+}
+
+.quota_bg { background-color: white; }
+.quota_high { background: url(images/quota.png) repeat-x 0 -28px #f90509; }
+.quota_mid { background: url(images/quota.png) repeat-x 0 -14px #e3e909; }
+.quota_low { background: url(images/quota.png) repeat-x 0 0px #05f905; }
+.quota_text_high { color: white; }
+.quota_text_mid { color: #666; }
+.quota_text_low { color: #666; }
+
+/*** popup menus ***/
+
+.popupmenu,
+#rcmKSearchpane,
+.ui-dialog  {
+	background: white;
+	border: 1px solid #E5E5E5;
+	box-shadow: 0 0 8px 0px #878787 !important;
+}
+
+.popupmenu.dropdown {
+	border-top: 1px solid #999;
+}
+
+.googie_list td,
+ul.toolbarmenu li,
+#rcmKSearchpane ul li {
+	color: #000;
+	white-space: nowrap;
+	min-width: 130px;
+	margin: 0;
+	border-top: none;
+	border-bottom: none;
+}
+
+.googie_list td span,
+ul.toolbarmenu li a {
+	color: #666;
+}
+
+.googie_list td span,
+ul.toolbarmenu li a.active {
+	color: black;
+}
+
+.googie_list td.googie_list_onhover,
+ul.toolbarmenu li a.active:hover,
+#rcmKSearchpane ul li.selected,
+select.decorated option:hover,
+select.decorated option[selected='selected'] {
+}
+
+ul.toolbarmenu li label {
+	color: #000;
+}
+
+ul.toolbarmenu li a.icon {
+	color: #333;
+}
+
+ul.toolbarmenu li a.icon:hover {
+	background: #B5D9FC;
+}
+
+.hint {
+	color: #999;
+}
+
+.splitter {
+	background: none;
+}
+
+#rcmdraglayer {
+	background: #444;
+	border: 1px solid #555;
+	color: #ccc;
+}
+
+#rcmdraglayer:after {
+	border-color: transparent #444;
+}
+
+/*** attachment list ***/
+
+.attachmentslist li a,
+#compose-attachments ul li {
+	color: #333;
+}
+
+/*** fieldset tabs ***/
+
+.tabsbar {
+	border-bottom: 2px solid #E5E5E5;
+	overflow: hidden;
+	height: 20px;
+}
+
+.tabsbar .tablink {
+	position: relative;
+	background: #E5E5E5 !important;
+	margin-right: 4px;
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
+	border: 1px solid #C5C5C5;
+	border-bottom: none;
+	padding-top: 5px;
+}
+
+.tabsbar .tablink a {
+	color: #000;
+	background: transparent;
+	border: none;
+}
+
+.tabsbar .tablink.selected {
+	background: #fff !important;
+	border: 2px solid #E5E5E5;
+	border-bottom: none;
+}
+
+.tabsbar .tablink.selected a {
+	background: transparent;
+	color: #000;
+	padding-top: 15px;
+}
+
+
+.curleezcompose {
+	background: #D94A38 !important;
+	margin-bottom: 10px !important;
+	padding:7px 30px !important;
+	color: white !important;
+	font-weight: bold !important;
+}
+
+/* _mail_ */
+
+#mailview-top {
+	top: 40px;
+	background: #fff;
+	border: 1px solid white;
+}
+
+#mailview-top.fullheight {
+
+}
+
+#mailview-left,
+#composeview-left,
+#addressview-left {
+	top: 40px;
+	background: white;
+}
+
+#mailview-bottom {
+	border: 1px solid white;
+	height: 28px;
+}
+
+#mailview-left #folderlist-footer {
+	background: white;
+	border: none;
+}
+
+#messagesearchtools {
+	z-index: 11;
+}
+
+#messagesearchtools-settings {
+	display: none;
+}
+
+#messagesearchtools-addressbook {
+	position: relative;
+	top: 11px;
+	left: -40px;
+}
+
+#messagelistcontainer {
+	bottom: 31px;
+}
+
+#mailboxcontainer,
+#messagelistcontainer {
+	top: 0px;
+}
+
+#messagelistfooter {
+	border-top: 1px solid white;
+	background: white;
+	border-radius: 0;
+}
+
+#mailboxlist li.virtual > a {
+	color: #aaa;
+}
+
+#mailboxlist li.recent > a {
+	color: #017cb4;
+}
+
+#mailboxlist li.mailbox ul {
+	border-top: none;
+	margin-top: 5px;
+}
+
+#mailboxlist li.mailbox .unreadcount {
+
+	background: #D3E8FF !important; /* !important fixes a IE9 bug */
+	color: #000;
+	font-weight: normal;
+	font-size: 80%;
+	padding: 2px;
+	border-radius: 6px !important;
+}
+
+#mailboxlist li.mailbox.selected > a .unreadcount {
+	background: #fff !important; /* !important fixes a IE9 bug */
+}
+
+#mailboxlist li.mailbox.recent > a .unreadcount {
+	background: #D3E8FF !important; /* !important fixes a IE9 bug */
+}
+
+#mailboxlist li.unread {
+	font-weight: normal;
+}
+
+#messagetoolbar,
+#addressbooktoolbar {
+	top: 0;
+	left: 0;
+	border: none;
+	background: transparent;
+  padding-top: 0;
+  height: 30px;
+}
+
+#messagetoolbar .toolbarselect {
+	top: 0;
+	right: 8px;
+	bottom: auto;
+}
+
+#messagelist tr.thread.expanded td {
+	background-color: #ededed;
+}
+
+#messagelist tr.flagged td,
+#messagelist tr.flagged td a {
+	color: black;
+}
+
+#messagelist thead tr td.sortedASC a,
+#messagelist thead tr td.sortedDESC a {
+	color: #004458;
+	background: url(images/listicons.png) right -912px no-repeat;
+}
+
+#messagelist tbody td a {
+	color: black;
+}
+
+#messageheader {
+	border-radius: 0;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+#messageheader,
+#partheader,
+#composeheaders {
+}
+
+.headers-table td {
+	color: black;
+}
+
+.headers-table td.header a {
+	color: black;
+}
+
+.headers-table td.subject {
+	color: #333;
+}
+
+#previewheaderstoggle {
+	display: none;
+}
+
+#all-headers {
+	border: 1px solid #DBEAFF;
+	background: #E5E5E5;
+}
+
+#headers-source {
+	color: #333;
+}
+
+#messagepreviewheader {
+	border-bottom: 1px solid #C3DAF4;
+}
+
+#messagecontent {
+	border-radius: 0;
+	border: none;
+}
+
+#messagecontent .rightcol,
+#messagepreview .rightcol {
+	background: #F7F7F7;
+}
+
+#message-objects div.notice,
+#message-buttons div.notice {
+	border: 1px solid #ffdf0e;
+	background-color: #fef893;
+}
+
+div.message-part,
+div.message-htmlpart {
+	border-top: 2px solid #f0f0f0;
+}
+
+div.message-part span.sig {
+	color: #666666;
+}
+
+div.message-part blockquote {
+	color: blue;
+	border-left: 2px solid blue;
+	border-right: 2px solid blue;
+	background-color: #F6F6F6;
+}
+
+div.message-part blockquote blockquote {
+	color: green;
+	border-left: 2px solid green;
+	border-right: 2px solid green;
+}
+
+div.message-part blockquote blockquote blockquote {
+	color: #990000;
+	border-left: 2px solid #bb0000;
+	border-right: 2px solid #bb0000;
+}
+
+#messagebody > hr {
+	color: #fff;
+	background: #fff;
+	border-bottom: 2px solid #f0f0f0;
+}
+
+#compose-contacts #directorylist {
+	border-bottom: 4px solid #c7e3ef;
+}
+
+#compose-contacts .scroller {
+	border-top: 1px solid #fff;
+}
+
+#composeoptionsbox {
+	background: #F5F5F5;
+	border-bottom: 1px solid #C5C5C5;
+}
+
+#compose-attachments {
+	background: #f0f0f0;
+	border-left: 1px solid #ddd;
+}
+
+#composebody_toolbargroup {
+	border-bottom: 1px solid #ddd;
+}
+
+#searchfilter {
+	top: 0;
+	right: 225px;
+
+}
+/* _compose_ */
+
+#composeheaders {
+	border-radius: 0;
+}
+
+#compose-contacts,
+#directorylistbox {
+	top: 0;
+	border: 0;
+}
+
+#compose-contacts h2,
+#directorylistbox h2 {
+	border-top-left-radius: 0;
+}
+
+#compose-contacts #directorylist {
+	border-bottom: 2px solid white;
+}
+
+#compose-contacts .scroller {
+	border-top: none;
+}
+
+#compose-content,
+#addresslist,
+#contacts-box {
+	top: 40px;
+}
+
+#composeview-right #message.statusbar {
+	border-top: none;
+}
+
+#composebody {
+	top: 0;
+}
+
+#compose-attachments {
+	top: 0;
+	background: #F5F5F5;
+	border-left: 1px solid #C5C5C5;
+	border-bottom: 1px solid #C5C5C5;
+}
+
+#composebody_toolbargroup {
+	border-bottom: 1px solid #C5C5C5;
+}
+
+/* _addressbook_ */
+
+#addressview-right {
+	z-index: 11;
+}
+
+.contactfieldgroup {
+	background: #fff;
+}
+
+.contactfieldgroup legend {
+	background: #E5E5E5;
+	border-bottom: none;
+}
+
+.contactfieldgroup .contactfieldlabel {
+	color: #666;
+}
+
+.contactfieldgroup .contactfieldlabel select {
+	color: #666;
+}
+
+#sourcename {
+	color: #000;
+}
+
+/* _settings_ */
+
+#settings-sections {
+	top: 35px;
+}
+
+#settings-right {
+	left: 226px;
+}
+
+#preferences-box {
+	left: 266px;
+}
+
+/* _help plugin_ */
+
+#helptoolbar {
+	top: 4px !important;
+}
+
+/* _additions_ */
+
+#mailboxcontainer {
+	background: white;
+	border: none;
+}
+
+#mailboxlist {
+	margin: 0;
+}
+
+#mailboxlist li {
+  background: none;
+	border: none;
+	padding: 0;
+}
+
+#mailboxlist li:first-child {
+}
+
+#mailboxlist li.mailbox.selected>a {
+	color: #000;
+}
+
+#mailboxlist li.selected>a {
+	background-color: white;
+	border-left: 3px solid #D54937;
+}
+
+#mailboxlist li a {
+	color: #545454;
+}
+
+#mailboxlist li.mailbox .unreadcount {
+	top: 4px;
+}
+
+.ui-dialog-titlebar {
+  	background: lightgray;
+	color: #000;
+}
+
+.ui-widget-content {
+	border: none;
+}
+
+#composebody_tbl { /* tinymce editor */
+	border: 0;
+	margin-top: 0 !important;
+}
+
+#composebody_tbl tr.mceFirst td {
+	border-top: 0;
+}
+
+#pluginbody,
+.uibox.contentbox {
+
+}
+
+#listselectors a {
+	background: #fff;
+	border: 1px solid #E5E5E5;
+	color: #333;
+}
+
+.o2k7Skin td.mceToolbar {
+	background-color: #F0F9FF !important;
+}
+
+.o2k7Skin table.mceLayout tr.mceLast td {
+	border: none !important;
+}
+
+.boxpagenav {
+	top: 5px;
+}
+
+/**/
