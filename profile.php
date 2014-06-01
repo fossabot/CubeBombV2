@@ -31,10 +31,10 @@
     $title = (($profileUser == null) ? "User doesn't exist" : htmlspecialchars($profileUser["username"])."'s Profile");
 
     // Scripts
-    $pageScript = '/js/pages/profile.js';
+    $pageScript = "/js/pages/profile.js";
 
     // CSS
-    $pageCss = '/css/pages/profile.css';
+    $pageCss = "/css/pages/profile.css";
 
     require($_SERVER["DOCUMENT_ROOT"] . "/include/page-top.php");
 

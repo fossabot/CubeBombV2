@@ -118,12 +118,12 @@
     width: 220px;
     height: 220px;
     background-size: 100% 100%;
-    border: 10px solid rgb(224, 224, 224);
+    border: 10px solid #e0e0e0;
 }
 
 .right .actions, .right .stats {
     padding: 10px 0px 10px 0px;
-    background-color: rgb(224, 224, 224);
+    background-color: #e0e0e0;
 }
 .right .actions a, .right .stats div {
     height: 40px;
@@ -135,8 +135,8 @@
     text-decoration: none;
 }
 .right .actions a:hover {
-    background-color: rgb(87, 123, 168);
-    color: rgb(224, 224, 224);
+    background-color: #577ba8;
+    color: #e0e0e0;
 }
 .right .actions a .sprite, .right .actions a .sprite-white {
     width: 24px;
@@ -150,21 +150,21 @@
     height: 1px;
     padding-top: 18px;
     margin: 0px 25px 18px 25px;
-    border-bottom: 1px solid rgb(209, 209, 209);
+    border-bottom: 1px solid #d1d1d1;
 }
 .right .actions .rule .text {
     float: left;
     height: 20px;
     line-height: 20px;
     font-size: 12px;
-    background-color: rgb(224, 224, 224);
+    background-color: #e0e0e0;
     padding-right: 15px;
     margin-top: -10px;
 }
 
 
 .right .friends {
-    background-color: rgb(224, 224, 224);
+    background-color: #e0e0e0;
     padding: 10px 0px 10px 0px;
 }
 .right .friends .thumbnail, .nextBlock {
@@ -178,7 +178,7 @@
 .right .friends .thumbnail .details {
     height: 16px;
     padding: 4px;
-    background-color: rgb(87, 123, 168);
+    background-color: #577ba8;
     color: #fff;
     text-align: left;
     line-height: 16px;
@@ -190,14 +190,14 @@
 
 .nextBlock {
     position: relative;
-    background-color: rgb(218, 218, 218);
+    background-color: #dadada;
     text-align: center;
     font-size: 13px;
     color: #000;
     opacity: 1 !important;
 }
 .nextBlock:hover {
-    background-color: rgb(196, 196, 196);
+    background-color: #c4c4c4;
 }
 .nextBlock .icon {
     margin-left: 2px;

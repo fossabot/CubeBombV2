@@ -6,7 +6,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
     color: #111;
     margin: 10px 0px;
 }
@@ -166,8 +166,8 @@ h1 {
     cursor: pointer;
 }
 #sidebar .button:hover {
-    background-color: rgb(87, 123, 168);
-    color: rgb(224, 224, 224);
+    background-color: #577ba8;
+    color: #e0e0e0;
 }
 #sidebar .button:last {
     margin-bottom: 0px;
@@ -178,7 +178,7 @@ h1 {
     display: inline-block;
     right: 0px;
     top: 18px;
-    background-color: rgb(87, 123, 168);
+    background-color: #577ba8;
 }
 #sidebar .button .rightArrow:after {
     left: 100%;
@@ -191,7 +191,7 @@ h1 {
 }
 #sidebar .button .rightArrow:after {
     border-color: rgba(69, 101, 131, 0);
-    border-left-color: rgb(87, 123, 168);
+    border-left-color: #577ba8;
     border-width: 18px;
     top: 50%;
     margin-top: -18px;
@@ -235,14 +235,14 @@ h1 {
     height: 1px;
     padding-top: 10px;
     margin: 0px 15px 10px 15px;
-    border-bottom: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid #d8d8d8;
 }
 #sidebar .rule .text {
     float: left;
     height: 20px;
     line-height: 20px;
     font-size: 12px;
-    background-color: rgb(224, 224, 224);
+    background-color: #e0e0e0;
     padding-right: 15px;
     margin-top: -10px;
 }
@@ -344,7 +344,7 @@ input[type=checkbox] {
 }
 
 .sa-button{
-    height: 38px;
+    height: 42px;
     display: inline-block;
     background-color: #577ba8;
     color: #fff;
@@ -352,7 +352,8 @@ input[type=checkbox] {
     border: none;
     cursor: pointer;
     font-size: 14px;
-    line-height: 38px;
+    line-height: 42px;
+    box-sizing: border-box;
 }
 .sa-button:hover {
     background-color: #6e8eb5; /*#3C84BD;*/ /*#272727;*/
@@ -366,13 +367,13 @@ input[type=checkbox] {
 }
 
 .sa-button.red{
-    background-color: rgb(211, 76, 76);
+    background-color: #d34c4c;
 }
 .sa-button.red:hover {
-    background-color: rgb(172, 60, 60);
+    background-color: #ac3c3c;
 }
 .sa-button.red:disabled {
-    background-color: rgb(183, 123, 123);
+    background-color: #b77b7b;
 }
 
 .sa-button.full {

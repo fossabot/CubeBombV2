@@ -21,7 +21,7 @@
     }
     
     if (!$isLoggedIn){
-        header("Location:/");
+        //header("Location:/");
         exit;
     }
 
@@ -54,7 +54,7 @@
         <?php 
             } 
         ?>
-        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+        <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>-->
         
         <title><?php echo htmlspecialchars($title); ?> | CubeBomb</title>
     </head>
