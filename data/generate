@@ -1,0 +1,8 @@
+#!/bin/bash
+convert 1.png 2.png 3.png 4.png 5.png -background none -flatten out.png
+optipng out.png
+printf "\nAvatar generated.\n"
+
+convert /var/www/html/images/avatars/blank.png /var/www/secure/sources/official/HatID1.png[512x512] -background none -flatten /var/www/html/testimg.png
+
+convert /var/www/html/images/avatars/blank.png[200x200] /var/www/secure/sources/official/HatID1.png[200x200] -background none -flatten /var/www/html/testimg.png

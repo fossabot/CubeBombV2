@@ -1,0 +1,15 @@
+.subtitle {
+    height: 28px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+.section.lighter {
+    
+}

@@ -10,7 +10,7 @@
     float: right;
 }
 
-.left {
+#content .left {
     width: 485px;
     float: left;
 }
@@ -25,18 +25,18 @@
     display: inline-block;
     float: left;
     font-family: 'Open Sans', sans-serif;
-    font-size: 40px;
+    font-size: 34px;
     color: #111;
 }
 .left .username .seen {
     float: right;
-    line-height: 60px;
+    line-height: 46px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;    
 }
 .left .description {
     width: 465px;
-    height: 185px;
+    height: 199px;
     padding-right: 20px;
     font-size: 15px;
     overflow-x: none;
@@ -109,7 +109,7 @@
 }
 
 
-.right {
+#content .right {
     width: 240px;
     float: right;
 }

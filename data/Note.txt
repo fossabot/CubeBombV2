@@ -1,0 +1,5 @@
+These avatars are for testing items on existing characters, namely backgrounds.
+
+Avatar sizes have been updated and in the future only images of 512x512 px will be accepted.
+
+-StuffMaker

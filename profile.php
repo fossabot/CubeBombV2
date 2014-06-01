@@ -1,33 +1,15 @@
 <?php
-    // Page configuration
-    $title = "StuffMaker's Profile";
-    
-    // Access
-    $public = true;
-    $publicOnly = false;
-    
-    // Functionality
-    $hideSidebar = false;
-
-    // Scripts
-    $pageScript = '/js/pages/profile.js';
-    $additionalScripts = "";
-
-    // CSS
-    $pageCss = '/css/pages/profile.css';
-    $additionalCss = "";
-
-    require($_SERVER["DOCUMENT_ROOT"] . "/include/page-top.php");
-
-    //---------------------
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/include/page-utils.php");
 
     $noExist = true;
+
+    $profileUser;
     
     if (isset($_GET["id"])){
         $id = trim($_GET["id"]);
     
         if (is_numeric($id)){
-            if (getSingleValue("SELECT count(`id`) FROM `private_users` WHERE `id` =" . escape($id) . " AND `deleted` =0 LIMIT 0, 1") == 1){
+            if (userExistsNotDeleted($id)){
                 $noExist = false;
                 
                 $profileUser = getArray("SELECT * FROM `private_users` WHERE `id` =" . escape($id) . " ORDER BY `id` ASC LIMIT 0, 1");
@@ -43,13 +25,26 @@
         }
     }
 
+    /****************************/
+
+    // Page configuration
+    $title = (($profileUser == null) ? "User doesn't exist" : htmlspecialchars($profileUser["username"])."'s Profile");
+
+    // Scripts
+    $pageScript = '/js/pages/profile.js';
+
+    // CSS
+    $pageCss = '/css/pages/profile.css';
+
+    require($_SERVER["DOCUMENT_ROOT"] . "/include/page-top.php");
+
     if ($noExist == false){
 ?>
 
                 <div class="left">
                     <div class="username">
                         <span class="title"><?php echo htmlspecialchars($profileUser["username"]); ?></span>
-                        <span class="seen">Last seen <?php echo timePassed(strtotime($profileUser["lastTime"])); ?> ago</span>
+                        <span class="seen">Last seen <?php echo timePassed($profileUser["lastTime"]); ?> ago</span>
                     </div>
                     <div class="description">
                         <?php echo str_replace("\n", "<br />", htmlspecialchars($profile["message"])); ?>
@@ -150,7 +145,7 @@
                         <a href="#">Subscribe <div class="sprite sprite-rightPointer"></div></a>
                         
                         <?php
-                            if ($profileUser["permissions"] >= 8){
+                            if ($user["permissions"] >= $_PADMIN){
                         ?>
                         <div id="adminDropdownButton" style="height: 40px; cursor: pointer;">
                             <div class="rule"><div class="text">Administration [Expand]</div></div>
@@ -163,9 +158,8 @@
                             <a href="#">Force Logout <div class="sprite sprite-rightPointer"></div></a>
                             <a href="#">Actions History <div class="sprite sprite-rightPointer"></div></a>
                             <a href="#">Clear Avatar <div class="sprite sprite-rightPointer"></div></a>
-                            <a href="#">Change Abilities <div class="sprite sprite-rightPointer"></div></a>
+                            <a href="#">Change Permissions <div class="sprite sprite-rightPointer"></div></a>
                             <a href="#">Related Accounts <div class="sprite sprite-rightPointer"></div></a>
-                            <a href="#">Actions History <div class="sprite sprite-rightPointer"></div></a>
                             <a href="#">Ban User <div class="sprite sprite-rightPointer"></div></a>
                             <a href="#">Delete Account <div class="sprite sprite-rightPointer"></div></a>
                             <a href="#">IP Ban <div class="sprite sprite-rightPointer"></div></a>
@@ -180,16 +174,16 @@
                     <div class="stats shadow">
                         <?php
                         switch ($profileUser["permissions"]){
-                            case 1:
+                            case $_PARTIST:
                                 ?><div style="color: #fff; background-color: #8f2ac5;">Artist</div><?php 
                                 break;
-                            case 6:
+                            case $_PMOD:
                                 ?><div style="color: #fff; background-color: #6cc52a;">Moderator</div><?php
                                 break;
-                            case 8:
+                            case $_PADMIN:
                                 ?><div style="color: #fff; background-color: #2a89c5;">Administrator</div><?php
                                 break;
-                            case 9:
+                            case $_POP:
                                 ?><div style="color: #fff; background-color: #c5382a;">Operator</div><?php
                                 break;
                         }?>

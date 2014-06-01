@@ -2,8 +2,8 @@
 
 function timePassed($timestamp, $timezone = NULL) {
   $timeAgo = new TimeAgo($timezone);
-  
-  return $timeAgo->inWords(date("D-M-Y H:i:s", $timestamp) , "now");
+
+  return $timeAgo->inWords($timestamp, "now");
 }
 
 /** 

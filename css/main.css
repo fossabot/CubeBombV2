@@ -1,6 +1,7 @@
 body {
-    background: rgb(179, 196, 206) url(/images/bg.jpg); 
+    background: rgb(136, 172, 198); 
     background-size: cover;
+    background-attachment: fixed;
     font-family: sans-serif;
 }
 
@@ -8,13 +9,13 @@ h1, h2, h3, h4, h5 {
     font-family: 'Open Sans', sans-serif;
     color: #111;
     margin: 10px 0px;
-    font-weight: normal;
 }
 h1:first-of-type, h2:first-of-type, h3:first-of-type, h4:first-of-type, h5:first-of-type {
     margin-top: 0px;
 }
 h1 {
     font-size: 40px;
+    font-weight: normal;
 }
 
 .selected {
@@ -23,7 +24,7 @@ h1 {
 }
 
 .shadow {
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.06);
+    /*box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.06);*/
 }
 
 .sprite { background: url(/images/icons/small/black/spritesheet.png) no-repeat; }
@@ -87,15 +88,14 @@ h1 {
     margin: 0 auto;
     overflow: hidden;
     box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.18);
-    background-color: rgb(202, 208, 212);
+    background-color: #ebebeb;
 }
 
 #nav {
-    height: 48px;
+    height: 49px;
     line-height: 50px;
     overflow: visible;
-    background-color: rgb(230, 230, 230);
-    border-bottom: 1px solid rgb(225, 225, 225);
+    background-color: #e6e6e6;
 }
 #nav a {
     display: inline-block;
@@ -110,7 +110,7 @@ h1 {
     line-height: 50px;
 }
 #nav a:hover {
-    background-color: rgb(87, 123, 168);
+    background-color: #577ba8;
     color: #fff;
 }
 #nav .account {
@@ -132,18 +132,18 @@ h1 {
 }
 
 #sidebar {
-    width: 200px;
     display: inline-block;
     float: left;
-    margin: 1px solid rgb(195, 195, 195);
+    margin: 1px solid #c3c3c3;
     overflow: visible;
-    background-color: rgb(224, 224, 224);
+    background-color: #e0e0e0;
     position: absolute;
     height: 100%;
 }
 #sidebar .avatar {
-    width: 200px;
-    height: 200px;
+    width: 176px;
+    height: 176px;
+    margin: 12px;
     background-size: 100% 100%;
 }
 #sidebar .block {
@@ -224,6 +224,12 @@ h1 {
     font-size: 15px;
 }
 
+#sidebar .gray-bombian {
+    background-image: url(/images/gray.png);
+    background-size: 200px;
+    height: 200px;
+}
+
 
 #sidebar .rule {
     height: 1px;
@@ -246,4 +252,177 @@ h1 {
     width: 750px;
     padding: 25px;
     float: right;
+}
+
+form h4 {
+    line-height: 42px;
+    margin: 0px 0px 20px 0px;
+    font-size: 16px;
+}
+form h4 span {
+    float: right; 
+    font-size: 13px;
+    color: #8e8e8e;
+}
+
+form .error {
+    color: #B33030;
+    line-height: 20px;
+    padding-bottom: 8px;
+    font-size: 14px;
+}
+form .error > ul {
+    /* Used to list errors that have occured. As of now, there are only 3 list items that can be reported. */
+    margin: 0px;
+    padding: 0px;
+}
+form .error > ul li {
+    list-style-type: none;
+}
+
+.inputRow {
+    margin-bottom: 20px;
+    line-height: 42px;
+    font-size: 13px;
+    font-weight: 300;
+}
+.inputRow.double {
+    line-height: 21px;
+}
+.inputRow.condensed {
+    margin-bottom: 8px;
+}
+
+.inputRow:last-of-type {
+    margin-bottom: 0px;
+}
+
+input[type=text], form input[type=password], textarea {
+    display: block;
+    height: 42px;
+    padding: 0px 12px;
+    background-color: #FFF !important;
+    border: 1px solid #FFF;
+    outline: none;
+    width: 100%;
+    font-size: 13px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+textarea {
+    padding: 12px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    resize: vertical;
+}
+form input:focus, form textarea:focus {
+    border: 1px solid #577ba8;
+}
+input.flagged, textarea.flagged, select.flagged {
+    border: 1px solid #c63a3a !important;
+}
+input.hint, textarea.hint {
+    /* Style for the initial field. Use the label tag to set the initial text. */
+    color: #000 !important;
+}
+input[required], textarea[required] {
+    /* Require fields */
+}
+input:-webkit-autofill, textarea:-webkit-autofill {
+    /* This is the yellow color that Chrome does when it autofills.*/
+    /* Prevent it from showing yellow with this hack.*/
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type=checkbox] {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    float: left;
+    margin-top: 14px;
+    margin-right: 25px;
+}
+
+.sa-button{
+    height: 38px;
+    display: inline-block;
+    background-color: #577ba8;
+    color: #fff;
+    padding: 0px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 38px;
+}
+.sa-button:hover {
+    background-color: #6e8eb5; /*#3C84BD;*/ /*#272727;*/
+}
+.sa-button:disabled {
+    background-color: #989ca7;
+}
+
+.sa-button.right {
+    float: right;
+}
+
+.sa-button.red{
+    background-color: rgb(211, 76, 76);
+}
+.sa-button.red:hover {
+    background-color: rgb(172, 60, 60);
+}
+.sa-button.red:disabled {
+    background-color: rgb(183, 123, 123);
+}
+
+.sa-button.full {
+    display: block;
+    text-align: center;
+}
+.sa-button.vertical {
+    margin-bottom: 15px;
+}
+.sa-button.vertical:last-of-type {
+    margin-bottom: 0px;
+}
+
+.sa-button.compact {
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+select {
+    width: 100%;
+    height: 42px;
+    padding: 0px 12px 0px 12px;
+    margin: 0px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVQ4T2NkoBAwUqifYRgasBgYJg1AfBdH2KgAxeuBOBYmjx4GZkCJhUDsBcT30QxRBPK3QzWfxmUASNwJiCcDsQsQP4cqlALSu4E4F4j3IRuMKxYCoE4FGQICe6H8jehewxeNOUDFEVANy4H0VGzhQigdgALsPxA3YdMMEiNkAC59cPFRAxgYAPfrEhFDXY5SAAAAAElFTkSuQmCC) no-repeat right #fff;
+    background-position: right center;
+    background-position: calc(100% - 10px) center;
+    
+    border: 1px solid #DADADA;
+    outline: none;
+    border-radius: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+select:after {
+    content: "v";
+    float: right;
+    font-size: 12px;
+    line-height: 42px;
+    margin-right: 13px;
+}
+
+select option:first-of-type {
+    color: #8e8e8e;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
