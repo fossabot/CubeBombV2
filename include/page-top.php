@@ -21,7 +21,7 @@
     }
     
     if (!$isLoggedIn){
-        //header("Location:/");
+        header("Location:/");
         exit;
     }
 

@@ -2,25 +2,26 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 34px;
     color: #111;
-}
-.sort-results {
-    float: right;
-    display: inline-block;
-    margin-top: 2px;
+    float: left;
 }
 #s-search {
     width: 200px;
     margin-right: 25px;
+    float: right;
 }
 .sort-results .submit {
-    
+    float: right;
 }
 #content .subtitle {
     height: 28px;
     font-family: sans-serif;
     font-size: 18px;
     line-height: 30px;
-    margin: 15px 0px;
+    margin: 25px 0px 15px;
+}
+#content .subtitle .s-more {
+    float: right;
+    font-size: 15px;
 }
 
 #content .section .row {
@@ -80,14 +81,12 @@
     width: 15px;
     height: 15px;
     padding: 2px 2px 2px 0px;
-    display: inline-block;
     float: left;
     margin-right: 3px;
 }
 .item .details .cost .origin {
     color: #e6e6e6;
     font-weight: 300;
-    display: inline-block;
     float: right;
 }
 .item.hover .details .cost .origin {

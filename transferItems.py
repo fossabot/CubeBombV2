@@ -79,7 +79,7 @@ def store_image(original_uri, userid, accepted, deleted):
         shutil.copy(original_uri, "/var/www/html/data/items/" + filename + ext)
         
         # Compress image file
-        os.system("optipng -quiet " + "/var/www/html/data/items/" + filename + ext);
+        # os.system("optipng -quiet " + "/var/www/html/data/items/" + filename + ext);
         
         # Generate checksum of file
         m = hashlib.md5()
@@ -91,12 +91,12 @@ def store_image(original_uri, userid, accepted, deleted):
         cur.execute("UPDATE `copy_private_images` SET `location` = '" + filename + "', `checksum` = '" + checksum + "' WHERE `id` =" + str(iid) + ";")
         
         # Generate preview
-        os.system("convert /var/www/html/images/avatars/blank.png /var/www/html/data/items/" + filename + ext + "[512x512] -background none -flatten /var/www/html/data/items/previews/full/" + str(iid) + ext)
-        os.system("convert /var/www/html/images/avatars/blank.png[200x200] /var/www/html/data/items/" + filename + ext + "[200x200] -background none -flatten /var/www/html/data/items/previews/200/" + str(iid) + ext)
+        #os.system("convert /var/www/html/images/avatars/blank.png /var/www/html/data/items/" + filename + ext + "[512x512] -background none -flatten /var/www/html/data/items/previews/full/" + str(iid) + ext)
+        #os.system("convert /var/www/html/images/avatars/blank.png[200x200] /var/www/html/data/items/" + filename + ext + "[200x200] -background none -flatten /var/www/html/data/items/previews/200/" + str(iid) + ext)
         
         # Compress preview files
-        os.system("optipng -quiet " + "/var/www/html/data/items/previews/full/" + str(iid) + ext);
-        os.system("optipng -quiet " + "/var/www/html/data/items/previews/200/" + str(iid) + ext);
+        #os.system("optipng -quiet " + "/var/www/html/data/items/previews/full/" + str(iid) + ext);
+        #os.system("optipng -quiet " + "/var/www/html/data/items/previews/200/" + str(iid) + ext);
         
         # Return the id of the inserted image
         return iid

@@ -136,7 +136,7 @@ h1 {
     float: left;
     margin: 1px solid #c3c3c3;
     overflow: visible;
-    background-color: #e0e0e0;
+    background-color: #D0D6E1;
     position: absolute;
     height: 100%;
 }
@@ -242,7 +242,7 @@ h1 {
     height: 20px;
     line-height: 20px;
     font-size: 12px;
-    background-color: #e0e0e0;
+    background-color: #D0D6E1;
     padding-right: 15px;
     margin-top: -10px;
 }
