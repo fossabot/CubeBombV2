@@ -187,9 +187,9 @@
                                 ?><div style="color: #fff; background-color: #c5382a;">Operator</div><?php
                                 break;
                         }?>
-                        <div>Member since <?php echo date("M. jS, Y", strtotime($profileUser["joinTime"])); ?></div>
-                        <div><?php echo number_format($profileUser["profileViews"]); ?> profile views</div>
-                        <div>1,321 forum posts</div>
+                        <div>Registered: <span><?php echo date("M. jS, Y", strtotime($profileUser["joinTime"])); ?></span></div>
+                        <div>Profile views: <span><?php echo number_format($profileUser["profileViews"]); ?></span></div>
+                        <div>Forum posts: <span>4,153</span></div>
                     </div>
                     
                     <div class="subtitle">Friends (73)</div>

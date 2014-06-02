@@ -36,7 +36,7 @@
 }
 .left .description {
     width: 465px;
-    height: 201px;
+    height: 206px;
     padding-right: 20px;
     font-size: 15px;
     overflow-x: none;
@@ -131,8 +131,16 @@
     line-height: 40px;
     font-size: 15px;
     color: #111;
-    padding-left: 25px;
+    padding-left: 20px;
     text-decoration: none;
+}
+.right .stats div {
+    color: #444;
+}
+.right .stats span {
+    float: right;
+    color: #111;
+    margin-right: 20px;
 }
 .right .actions a:hover {
     background-color: #577ba8;
@@ -162,10 +170,11 @@
     margin-top: -10px;
 }
 
-
 .right .friends {
-    background-color: #e0e0e0;
-    padding: 10px 0px 10px 0px;
+    background-color: #dadada;
+    border: 10px solid #e0e0e0;
+    border-left: 0px;
+    border-right: 0px;
 }
 .right .friends .thumbnail, .nextBlock {
     width: 80px;

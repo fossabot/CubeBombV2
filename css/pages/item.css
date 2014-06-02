@@ -61,6 +61,12 @@
     float: left;
 }
 
+.star {
+    font-size: 30px;
+    display: inline-block;
+    float: right;
+}
+
 #s-purchase, #s-gift {
     float: right;
 }
@@ -95,9 +101,41 @@
     background-color: #e6e6e6;
 }
 
-.right .more {
-    background-color: #e0e0e0;
+.right .info {
+    width: 210px;
     padding: 10px 0px 10px 0px;
+    background-color: #e0e0e0;
+    display: inline-block;
+    float: left;
+}
+.right .info span {
+    float: right;
+    color: #111;
+    margin-right: 20px;
+}
+.right .info div {
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    color: #444;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.right .avatar {
+    width: 85px;
+    height: 85px;
+    display: inline-block;
+    float: left;
+    margin-left: 25px;
+    background-size: cover;
+}
+
+.right .more {
+    background-color: #dadada;
+    border: 10px solid #e0e0e0;
+    border-left: 0px;
+    border-right: 0px;
 }
 .right .more .thumbnail, .nextBlock {
     width: 80px;

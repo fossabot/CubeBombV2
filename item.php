@@ -19,8 +19,9 @@
     require($_SERVER["DOCUMENT_ROOT"] . "/include/page-top.php");
 ?>
                 <div class="breadcrumb">
+                    <!--<div class="star">&#9734; &#9733;</div>-->
                     <a href="#">&laquo; Return to Shop</a>
-                    <a href="#" style="float: right;">&#9734; &#9733;</a>
+                    
                 </div>
                 <div class="left">
                     <div class="description">
@@ -41,6 +42,17 @@
                 </div>
                 <div class="right">
                     <div class="preview" style="background-image: url(/data/items/previews/full/1.png);"></div>
+                    <div class="subtitle">Info</div>
+                    
+                    <div>
+                        <div class="info">
+                            <div>Author: <span><a href="#">StuffMaker</a></span></div>
+                            <div>Created: <span>Feb. 16, 2010</span></div>
+                            <div>Purchased: <span>1,164</span></div>
+                        </div>
+                        <div class="avatar" style="background-image: url(/data/avatars/stuffmaker.png);"></div>
+                        <div style="clear: both;"></div>
+                    </div>
                     <div class="subtitle">More from this user</div>
                     <div class="more">
                         <a href="#">
