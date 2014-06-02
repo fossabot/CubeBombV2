@@ -1,0 +1,153 @@
+.namebar .title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+    color: #111;
+    float: left;
+}
+#content .subtitle {
+    height: 28px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.return {
+    height: 25px;
+    margin-bottom: 15px;
+    line-height: 25px;
+}
+
+.left {
+    width: 405px;
+    float: left;
+    display: inline-block;
+}
+.left .namebar {
+    margin-bottom: 10px;
+}
+
+.left .description {
+    height: 268px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 15px;
+}
+
+.left .purchasebox {
+    height: 42px;
+    margin-top: 10px;
+}
+
+.left .purchasebox .cost {
+    padding: 0px 10px;
+    float: left;
+    height: 42px;
+    display: inline-block;
+    background-color: #e0e0e0;
+}
+
+.left .purchasebox .icon {
+    width: 22px;
+    height: 22px;
+    margin: 10px 14px 10px 0px;
+    float: left;
+}
+.left .purchasebox span {
+    line-height: 42px;
+    font-size: 20px;
+    display: inline-block;
+    float: left;
+}
+
+#s-purchase, #s-gift {
+    float: right;
+}
+#s-purchase {
+    background-color: #6FA857;
+}
+#s-purchase:hover {
+    background-color: #93c379;
+}
+#s-purchase .icon {
+    width: 15px;
+    height: 15px;
+    margin: 13.2px;
+    margin-left: 0px;
+}
+#s-gift {
+    margin-right: 15px;
+}
+
+.right {
+    width: 320px;
+    float: right;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.right .preview {
+    width: 300px;
+    height: 300px;
+    background-size: 100% 100%;
+    border: 10px solid #e0e0e0;
+    background-color: #e6e6e6;
+}
+
+.right .more {
+    background-color: #e0e0e0;
+    padding: 10px 0px 10px 0px;
+}
+.right .more .thumbnail, .nextBlock {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border: none;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.right .more .thumbnail .details {
+    height: 16px;
+    padding: 4px;
+    background-color: rgb(87, 123, 168);
+    color: #fff;
+    text-align: left;
+    line-height: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 97px;
+}
+.right .more .thumbnail .details .icon {
+    float: left;
+    margin-top: 2px;
+    margin-right: 4px;
+    width: 13px !important;
+    height: 13px !important;
+}
+
+
+.nextBlock {
+    position: relative;
+    background-color: #dadada;
+    text-align: center;
+    font-size: 13px;
+    color: #000;
+    opacity: 1 !important;
+}
+.nextBlock:hover {
+    background-color: #c4c4c4;
+}
+.nextBlock .icon {
+    margin-left: 2px;
+    width: 60px;
+    height: 60px;
+    border: none;
+}
+.nextBlock div {
+    width: 80px;
+    position: absolute;
+    left: 0px;
+    bottom: 12px;
+    text-align: center;
+}

@@ -47,21 +47,21 @@
     margin-left: 0px;
 }
 .item .spacer {
-    padding: 12.5px;
+    padding: 10px;
     background-color: #e0e0e0;
 }
 .item.hover .spacer {
-    background-color: rgba(224, 224, 224, 0.65);
+    background-color: #CCD5E6;
 }
 .item .preview {
-    width: 153px;
-    height: 153px;
+    width: 158px;
+    height: 158px;
     background-size: cover;
     background-position: center;
     /*background-color: #ebebeb;*/
 }
 .item .details {
-    padding: 12.5px;
+    padding: 10px;
     font-size: 15px;
     line-height: 20px;
     font-weight: 300;

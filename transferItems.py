@@ -19,7 +19,7 @@ cur = db.cursor()
 # Stores item in database 
 def insert_item(userid, official, deleted, originalid, wasuseritem, timestamp, image_uri, name, description, cost, forsale):
     # Store the new image or catch error
-    image = store_image(image_uri, userid, 1, 0)
+    image = store_image(image_uri, userid, 1, 0, str(timestamp))
     
     if image != -1:
         
@@ -41,7 +41,7 @@ def insert_item(userid, official, deleted, originalid, wasuseritem, timestamp, i
 
 # Stores image in database and generates preview
 # Returns -1 on error
-def store_image(original_uri, userid, accepted, deleted):
+def store_image(original_uri, userid, accepted, deleted, timestamp):
     if os.path.isfile(original_uri):
         
         # Convert the value to a friendly database format
@@ -62,7 +62,7 @@ def store_image(original_uri, userid, accepted, deleted):
             return -1
         
         # Insert initial row into database
-        cur.execute("INSERT INTO `cubebomb2`.`copy_private_images` (`userid`, `location`, `checksum`, `filetype`, `timestamp`, `denied`, `deleted`)VALUES ('" + str(userid) + "', '00000000000000000000000000000000', '00000000000000000000000000000000', '" + str(filetype) + "', now(), '" + str(denied) + "', '" + str(deleted) + "');")
+        cur.execute("INSERT INTO `cubebomb2`.`copy_private_images` (`userid`, `location`, `checksum`, `filetype`, `timestamp`, `denied`, `deleted`)VALUES ('" + str(userid) + "', '00000000000000000000000000000000', '00000000000000000000000000000000', '" + str(filetype) + "', FROM_UNIXTIME(" + str(timestamp) + "), '" + str(denied) + "', '" + str(deleted) + "');")
                 
         # Get inserted row id to generate filename
         iid = cur.lastrowid
@@ -91,8 +91,8 @@ def store_image(original_uri, userid, accepted, deleted):
         cur.execute("UPDATE `copy_private_images` SET `location` = '" + filename + "', `checksum` = '" + checksum + "' WHERE `id` =" + str(iid) + ";")
         
         # Generate preview
-        #os.system("convert /var/www/html/images/avatars/blank.png /var/www/html/data/items/" + filename + ext + "[512x512] -background none -flatten /var/www/html/data/items/previews/full/" + str(iid) + ext)
-        #os.system("convert /var/www/html/images/avatars/blank.png[200x200] /var/www/html/data/items/" + filename + ext + "[200x200] -background none -flatten /var/www/html/data/items/previews/200/" + str(iid) + ext)
+        os.system("convert /var/www/html/images/avatars/blank.png /var/www/html/data/items/" + filename + ext + "[512x512] -background none -flatten /var/www/html/data/items/previews/full/" + str(iid) + ext)
+        os.system("convert /var/www/html/images/avatars/blank.png[200x200] /var/www/html/data/items/" + filename + ext + "[200x200] -background none -flatten /var/www/html/data/items/previews/200/" + str(iid) + ext)
         
         # Compress preview files
         #os.system("optipng -quiet " + "/var/www/html/data/items/previews/full/" + str(iid) + ext);

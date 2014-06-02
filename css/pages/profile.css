@@ -16,7 +16,7 @@
 }
 
 .left .username {
-    height: 45px;
+    height: 39px;
     margin-top: -5px;
 }
 .left .username .title {
@@ -30,13 +30,13 @@
 }
 .left .username .seen {
     float: right;
-    line-height: 46px;
+    line-height: 39px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;    
 }
 .left .description {
     width: 465px;
-    height: 199px;
+    height: 201px;
     padding-right: 20px;
     font-size: 15px;
     overflow-x: none;

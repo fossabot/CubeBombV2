@@ -1,8 +1,12 @@
 body {
-    background: rgb(136, 172, 198); 
+    background: #88acc6 url(/images/cloud.jpg); 
     background-size: cover;
     background-attachment: fixed;
     font-family: sans-serif;
+    font-size: 15px;
+}
+body, html {
+    min-height: 100%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -16,6 +20,15 @@ h1:first-of-type, h2:first-of-type, h3:first-of-type, h4:first-of-type, h5:first
 h1 {
     font-size: 40px;
     font-weight: normal;
+}
+
+a {
+    color: #577ba8;
+    text-decoration: none;
+}
+a:hover {
+    color: #6e8eb5;
+    text-decoration: underline;
 }
 
 .selected {
@@ -136,14 +149,13 @@ h1 {
     float: left;
     margin: 1px solid #c3c3c3;
     overflow: visible;
-    background-color: #D0D6E1;
+    background-color: #e0e0e0; /*#CCD5E6;*/
     position: absolute;
-    height: 100%;
 }
 #sidebar .avatar {
-    width: 176px;
-    height: 176px;
-    margin: 12px;
+    width: 180px;
+    height: 180px;
+    margin: 10px;
     background-size: 100% 100%;
 }
 #sidebar .block {
@@ -242,7 +254,7 @@ h1 {
     height: 20px;
     line-height: 20px;
     font-size: 12px;
-    background-color: #D0D6E1;
+    background-color: #e0e0e0; /*#CCD5E6;*/
     padding-right: 15px;
     margin-top: -10px;
 }
@@ -278,6 +290,12 @@ form .error > ul {
 }
 form .error > ul li {
     list-style-type: none;
+}
+
+.breadcrumb {
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 20px;
 }
 
 .inputRow {

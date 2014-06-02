@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">Name of this awesome</div>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">Hate name</div>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">Name hat look</div>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">this</div>
@@ -79,7 +79,7 @@
                     <div class="row">
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">Name of this awesome</div>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">Hate name</div>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">Name hat look</div>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="item">
                             <div class="spacer">
-                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/full/<?php echo rand(1, 1000); ?>.png); "></div>
+                                <div class="preview" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png); "></div>
                             </div>
                             <div class="details">
                                 <div class="name">this</div>

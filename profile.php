@@ -57,61 +57,61 @@
                             <div class="sort"></div>
                         </div>
                         
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2200</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2100</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2210</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2220</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2230</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2240</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2250</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2260</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2270</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2280</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2290</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2201</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2202</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2203</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2204</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2205</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2206</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2207</div>
                         </div></a>
-                        <a href="#"><div class="item" style="background-image: url(http://www.cubetales.com/item/preview/?id=67);">
+                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2208</div>
                         </div></a>
                         

@@ -19,6 +19,9 @@
     if (!isset($publicOnly)){
         $publicOnly = false;
     }
+    if (!isset($breadcrumb)){
+        $breadcrumb = false;
+    }
     
     if (!$isLoggedIn){
         header("Location:/");
@@ -44,7 +47,6 @@
             } 
         ?>
         
-        <link rel="stylesheet" type="text/css" href="/css/pages/profile.css">
         <link rel="stylesheet" type="text/css" href="/css/main.css">
         <link rel="stylesheet" type="text/css" href="/css/tipsy.css">
         <?php 
@@ -86,16 +88,14 @@
                 <a href="#" style="float: right;">Log out</a>
                 <?php } ?>
             </div>
-            <div id="sidebar-wrapper">
-                <div id="sidebar" class="shadow">
-                    <?php 
-                        if ($isLoggedIn){
-                            include($_SERVER["DOCUMENT_ROOT"] . "/include/sidebar/default.php");
-                        }else{
-                            include($_SERVER["DOCUMENT_ROOT"] . "/include/sidebar/login.php");
-                        }
-                    ?>
-                </div>
-                <div style="clear: both;"></div>
+            <div id="sidebar" class="shadow">
+                <?php 
+                    if ($isLoggedIn){
+                        include($_SERVER["DOCUMENT_ROOT"] . "/include/sidebar/default.php");
+                    }else{
+                        include($_SERVER["DOCUMENT_ROOT"] . "/include/sidebar/login.php");
+                    }
+                ?>
             </div>
+            <div style="clear: both;"></div>
             <div id="content">
