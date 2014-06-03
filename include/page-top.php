@@ -44,17 +44,24 @@
         ?>
         <script src="<?php echo $pageScript; ?>"></script>
         <?php 
-            } 
+            }
+
+            if ($additionalScripts) {
+                echo $additionalScripts;
+            }
         ?>
         
         <link rel="stylesheet" type="text/css" href="/css/main.css">
-        <link rel="stylesheet" type="text/css" href="/css/tipsy.css">
         <?php 
             if ($pageCss != "") { 
         ?>
         <link rel="stylesheet" type="text/css" href="<?php echo $pageCss; ?>">
         <?php 
-            } 
+            }
+
+            if ($additionalCss) {
+                echo $additionalCss;
+            }
         ?>
         <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>-->
         

@@ -9,6 +9,8 @@
         $id = trim($_GET["id"]);
     
         if (is_numeric($id)){
+            $id = intval($id);
+            
             if (userExistsNotDeleted($id)){
                 $noExist = false;
                 
@@ -24,6 +26,8 @@
             }
         }
     }
+
+    query("UPDATE `private_users` SET `profileViews` = `profileViews`+1 WHERE `id` = '" . escape(intval($id)) . "';");
 
     /****************************/
 

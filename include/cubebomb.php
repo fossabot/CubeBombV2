@@ -10,11 +10,53 @@ $userId = 0;
 //$user = array();
 
 // Simple global variables
+// For permissions
 $_PNONE   = 0;
 $_PARTIST = 1;
 $_PMOD    = 2;
 $_PADMIN  = 3;
 $_POP     = 4;
+
+/*
+// http://stackoverflow.com/questions/4762527/what-is-the-best-way-to-count-page-views-in-php-mysql
+$memcache = new Memcache;
+$memcache->connect("127.0.0.1") or die("Could not connect to memcached instance.");
+
+function memRecord($key, $value){
+    global $memcache;
+    
+    if(!$memcache->get("cb_" . $key)) {
+        $memcache->set("cb_" . $key, $value);
+    }
+}
+
+// Records a pageview
+// Type: string representing page name
+// Id: Represents unique identifier of page
+// Current: Current database-known value
+function recordPageview($type, $id, $current){
+    global $memcache;
+    
+    if ($memcache->get("cb_pageview_" . $type . "_" . strval($id))){
+        $delta = ($memcache->get("cb_pageview_" . $type . "_" . strval($id)) - $current);
+        
+        error_log("cb_pageview_" . $type . "_" . strval($id) . " = " . strval($delta) . "\n", 3, "/var/log/httpd/error_log");
+        
+        // Check to see if value has hit minimum storage threshold
+        if ($delta > 10){
+            // Reset counter
+            memRecord("cb_pageview_" . $type . "_" . strval($id), intval($current));
+            // Return change
+            return $delta;
+        }
+    }
+    
+    // Increment value
+    $memcache->increment("cb_pageview_" . $type . "_" . strval($id), 1, intval($current));
+    
+    return 0;
+}
+*/
 
 if (isset($_COOKIE["login"])){
     $cookie = escape(trim($_COOKIE["login"]));

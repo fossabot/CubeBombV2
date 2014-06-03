@@ -22,4 +22,12 @@
         
         return getSingleValue("SELECT `cookie` FROM `private_users` WHERE LOWER(`username`) =LOWER('" . escape(trim($username)) . "') AND `firetruck` =MD5(CONCAT('$salt1', '" . escape($password) . "', '$salt2')) LIMIT 0, 1");
     }
+
+    function itemExistsNotDeleted($itemId){
+        return getSingleValue("SELECT COUNT(`id`) FROM `public_items` WHERE `id` =" . escape(intval($itemId)) . " AND `deleted` =0 LIMIT 0, 1");
+    }
+    
+    function getUsername($userId){
+        return getSingleValue("SELECT `username` FROM `private_users` WHERE `id` =" . escape(intval($userId)) . " LIMIT 0, 1");
+    }
 ?>

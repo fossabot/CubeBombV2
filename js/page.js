@@ -7,6 +7,7 @@ $(document).ready(function(){
         $(this).find(".sprite-white").removeClass("sprite-white").addClass("sprite");
     });
     
+    $("[title]").tipsy();
     $("#nav .time").tipsy({gravity: "s", delayIn: 1000});
 });
 

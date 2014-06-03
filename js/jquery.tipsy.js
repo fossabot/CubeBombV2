@@ -190,10 +190,10 @@
         delayOut: 0,
         fade: false,
         fallback: '',
-        gravity: 'n',
+        gravity: 's',
         html: false,
         live: false,
-        offset: 0,
+        offset: 5,
         opacity: 1.0,
         title: 'title',
         trigger: 'hover'

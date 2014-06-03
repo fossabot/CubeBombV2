@@ -9,8 +9,7 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     line-height: 30px;
-    margin-top: 10px;
-    margin-bottom: 8px;
+    margin: 10px 0px;
 }
 
 .return {
@@ -61,6 +60,52 @@
     float: left;
 }
 
+.left .comment{
+    margin-bottom: 25px;
+}
+.left .comment .avatar {
+    display: inline-block;
+    float: left;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+.left .comment .content {
+    background-color: #e0e0e0;
+    padding: 15px;
+    margin-left: 25px;
+    display: inline-block;
+    float: left;
+    width: 290px;
+}
+.left .comment .details {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+.left .comment .details span {
+    float: right;
+}
+
+.left .comments textarea {
+    height: 70px;
+}
+.left .comments .sa-button {
+    float: right;
+}
+.left .comments .fillspace .message {
+    margin-bottom: 25px;
+}
+.left .comments .fillspace .message:first-of-type {
+    margin-top: 10px;
+}
+#load-more {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
 .star {
     font-size: 30px;
     display: inline-block;
@@ -94,11 +139,9 @@
 }
 
 .right .preview {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     background-size: 100% 100%;
-    border: 10px solid #e0e0e0;
-    background-color: #e6e6e6;
 }
 
 .right .info {

@@ -3,3 +3,8 @@
         </div>
     </body>
 </html>
+<?php 
+if (isset($memcached)){
+    $memcached->quit();
+}
+?>
