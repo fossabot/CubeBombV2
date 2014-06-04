@@ -63,6 +63,9 @@
 .left .comment{
     margin-bottom: 25px;
 }
+.left .comment .content.colored {
+    background-color: #CCD5E6
+}
 .left .comment .avatar {
     display: inline-block;
     float: left;
@@ -87,6 +90,9 @@
     float: right;
 }
 
+.left .comments .post {
+    margin-bottom: 25px;
+}
 .left .comments textarea {
     height: 70px;
 }

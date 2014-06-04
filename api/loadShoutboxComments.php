@@ -20,7 +20,7 @@ if (isset($_POST["start"]) && is_numeric($_POST["start"]) && $_POST["start"] != 
     $qbuilder = "AND `id` < '$start'";
 }
 
-$response = query("SELECT * FROM `public_items_comments` WHERE `itemid` ='" . escape($id) . "' AND `deleted` =0 $qbuilder ORDER BY `id` DESC LIMIT 0, 15");
+$response = query("SELECT * FROM `public_users_profiles_shoutboxes` WHERE `profile` ='" . escape($id) . "' AND `deleted` =0 $qbuilder ORDER BY `id` DESC LIMIT 0, 15");
 
 $json = array();
 
@@ -31,7 +31,7 @@ while ($row = fetchRows($response)){
     $row["ago"] = ago($row["timestamp"]). " ago";
     
     if ($isLoggedIn){
-        $row["colored"] = (isItemAuthor($row["userid"], $id));
+        $row["colored"] = ($row["userid"] == $id);
     }else{
         $row["colored"] = false;
     }
@@ -47,7 +47,7 @@ if (!empty($json)){
     
     $final = end($json)["id"];
     
-    $remaining = getSingleValue("SELECT COUNT(`id`) FROM `public_items_comments` WHERE `itemid` ='" . escape($id) . "' AND `deleted` =0 AND `id` < '$final' ORDER BY `id` DESC LIMIT 0, 1");
+    $remaining = getSingleValue("SELECT COUNT(`id`) FROM `public_users_profiles_shoutboxes` WHERE `profile` ='" . escape($id) . "' AND `deleted` =0 AND `id` < '$final' ORDER BY `id` DESC LIMIT 0, 1");
     if ($remaining >= 1){
         $more = true;
     }

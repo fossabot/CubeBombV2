@@ -16,7 +16,7 @@
                 
                 $item = getArray("SELECT * FROM `public_items` WHERE `id` =" . escape($id) . " ORDER BY `id` ASC LIMIT 0, 1");
                 
-                $item += getArray("SELECT * FROM (SELECT * FROM`public_items_details` WHERE `itemid` ='" . $item["id"] . "' ORDER BY `id` DESC LIMIT 0, 1) A, (SELECT `username` as `author` FROM `private_users` WHERE `id` ='" . $item["userid"] . "') B");
+                $item += getArray("SELECT * FROM (SELECT * FROM`public_items_details` WHERE `itemid` ='" . $item["id"] . "' ORDER BY `id` DESC LIMIT 0, 1) A, (SELECT `username` as `author` FROM `private_users` WHERE `id` ='" . $item["userid"] . "') B, (SELECT COUNT(`id`) AS `purchases` FROM `private_purchases` WHERE `itemid` = '" . $item["id"] . "') C");
             }
         }
     }
@@ -43,7 +43,6 @@
                     <a href="#">&laquo; Return to Shop</a>
                     
                 </div>
-                <input type="hidden" id="id" value="<?php echo $id; ?>"/>
                 <div class="left">
                     <div class="description">
                         <div class="namebar">
@@ -62,6 +61,19 @@
                     </div>
                     <div class="subtitle">Comments</div>
                     <div class="comments">
+                        <div class="post">
+                            <form action="/api/saveItemComment.php">
+                                <div class="error"></div>
+                                <input type="hidden" name="id" id="id" value="<?php echo $id; ?>"/>
+                                <div class="inputRow">
+                                    <textarea name="comment" id="s-comment" label="Post comment" required></textarea>
+                                </div>
+                                <div class="inputRow">
+                                    <div class="sa-button" id="s-submit" style="display: none;">Submit</div>
+                                    <div style="clear: both;"></div>
+                                </div>
+                            </form>
+                        </div>
                         <div class="comment" id="comment-template" style="display: none;">
                             <div class="avatar" title="View profile"></div>
                             <div class="content">
@@ -76,16 +88,6 @@
                         <div class="fillspace">
                             <div class="message">Loading comments...</div>
                         </div>
-                        <div class="post">
-                            <form action="#">
-                                <div class="inputRow">
-                                    <textarea name="comment" label="Post comment" required></textarea>
-                                </div>
-                                <div class="inputRow">
-                                    <div class="sa-button submit">Submit</div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
                 <div class="right">
@@ -96,7 +98,7 @@
                         <div class="info">
                             <div>Author: <span><a href="#"><?php echo htmlspecialchars($item["author"]); ?></a></span></div>
                             <div>Created: <span><?php  ?>Feb. 16, 2010</span></div>
-                            <div>Purchased: <span>1,164</span></div>
+                            <div>Purchased: <span><?php echo number_format($item["purchases"]); ?></span></div>
                             <div>Views: <span><?php echo htmlspecialchars($item["views"]); ?></span></div>
                         </div>
                         <div class="avatar" title="View profile" style="background-image: url(/data/avatars/<?php echo urlencode(strtolower($item["author"])); ?>.png);"></div>

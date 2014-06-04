@@ -8,7 +8,7 @@ $(document).ready(function(){
     });
     
     $("[title]").tipsy();
-    $("#nav .time").tipsy({gravity: "s", delayIn: 1000});
+    //$("#nav .time").tipsy({gravity: "s", delayIn: 1000});
 });
 
 
@@ -133,7 +133,7 @@ function loadForms(){
                 
                 // Disable button and attach disabled class
                 $(this).addClass("disabled");
-                $(this).prop("disabled");
+                $(this).attr("disabled");
                 
                 form.find(".error").hide();
                 
@@ -142,20 +142,22 @@ function loadForms(){
                 
                 // Post data to handler given in form action  field.
                 // Response body sent to "response" field of function when request finishes
-                $.post(form.prop("action"), formData, function(response){
+                $.post(form.attr("action"), formData, function(response){
                     switch(response){
                         case "x":
                             error("Unknown error.", form);
                             
                             $(this).removeClass("disabled");
-                            $(this).prop("disabled", false);
+                            $(this).attr("disabled", false);
                             break;
                         case "y":
                             // Success -- Redirect to url in "success" tag of form
-                            window.location = form.attr("success");
+                            if (form.attr("success") != undefined){
+                                window.location = form.attr("success");
+                            }
                             
                             $(this).removeClass("disabled");
-                            $(this).prop("disabled", false);
+                            $(this).removeAttr("disabled");
                             
                             break;
                         default:
@@ -169,7 +171,7 @@ function loadForms(){
                                 error(response, form);
 
                                 $(this).removeClass("disabled");
-                                $(this).prop("disabled", false);
+                                $(this).removeAttr("disabled");
                             }
                             
                             break;

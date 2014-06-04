@@ -112,32 +112,32 @@ def get_id(username):
         return 0
     
 def get_new_itemid(oldid, useritem):
-    cur.execute("SELECT COUNT(`id`) FROM `copy_public_items` WHERE `originalid` ='" + str(oldid) + "' AND `wasuseritem` = '" + str(useritem) + "'")
+    cur.execute("SELECT COUNT(`id`) FROM `public_items` WHERE `originalid` ='" + str(oldid) + "' AND `wasuseritem` = '" + str(useritem) + "'")
     if cur.fetchall()[0][0] > 0:
-        cur.execute("SELECT `id` FROM `copy_public_items` WHERE `originalid` ='" + str(oldid) + "' AND `wasuseritem` = '" + str(useritem) + "'")
+        cur.execute("SELECT `id` FROM `public_items` WHERE `originalid` ='" + str(oldid) + "' AND `wasuseritem` = '" + str(useritem) + "'")
         return cur.fetchall()[0][0]
     else:
         return -1
 
-print("Beginning to transfer items")
-print("Official catalog:")
-
-cur.execute("SELECT * FROM `cbdata`.`items` WHERE `gif` = '0'")
-
-for row in cur.fetchall():
-    print("Official " + str(row[0]) + " " + str(row[1]) + "/var/www/secure/sources/official/HatID"+str(row[0])+".png")
-    print insert_item(get_id(row[5]), 1, row[11], row[0], 0, time.mktime(datetime.datetime.strptime(row[6], "%m/%d/%Y").timetuple()), "/var/www/secure/sources/official/HatID"+str(row[0])+".png", db.escape_string(row[1]), db.escape_string(row[2]), str(row[3]), str(0))
-    
-print("User Catalog:")
-    
-cur.execute("SELECT * FROM `cbdata`.`user-items`")
-
-for row in cur.fetchall():
-    m = hashlib.md5()
-    m.update(str(row[0]))
-    
-    print("User " + str(row[0]) + " /var/www/secure/sources/user/" + m.hexdigest() + ".png")
-    print insert_item(str(row[4]), str(0), str(row[7]), str(row[0]), "1", str(row[5]), "/var/www/secure/sources/user/" + m.hexdigest() + ".png", db.escape_string(row[1]), db.escape_string(row[2]), str(row[8]), str(row[10]))
+#print("Beginning to transfer items")
+#print("Official catalog:")
+#
+#cur.execute("SELECT * FROM `cbdata`.`items` WHERE `gif` = '0'")
+#
+#for row in cur.fetchall():
+#    print("Official " + str(row[0]) + " " + str(row[1]) + "/var/www/secure/sources/official/HatID"+str(row[0])+".png")
+#    print insert_item(get_id(row[5]), 1, row[11], row[0], 0, time.mktime(datetime.datetime.strptime(row[6], "%m/%d/%Y").timetuple()), "/var/www/secure/sources/official/HatID"+str(row[0])+".png", #db.escape_string(row[1]), db.escape_string(row[2]), str(row[3]), str(0))
+#    
+#print("User Catalog:")
+#    
+#cur.execute("SELECT * FROM `cbdata`.`user-items`")
+#
+#for row in cur.fetchall():
+#    m = hashlib.md5()
+#    m.update(str(row[0]))
+#    
+#    print("User " + str(row[0]) + " /var/www/secure/sources/user/" + m.hexdigest() + ".png")
+#    print insert_item(str(row[4]), str(0), str(row[7]), str(row[0]), "1", str(row[5]), "/var/www/secure/sources/user/" + m.hexdigest() + ".png", db.escape_string(row[1]), db.escape_string(row[2]), str(row[8]), str(row[10]))
 
 print("Transferring purchases")
 print("Official purchases:");
@@ -145,19 +145,18 @@ print("Official purchases:");
 cur.execute("SELECT * FROM `cbdata`.`purchases_official` ORDER BY `itemid`")
 
 for row in cur.fetchall():
-    nid = get_new_itemid(str(row[1]), 1)
+    nid = get_new_itemid(str(row[1]), 0)
     
-    print("User " + str(row[1]) + " as " + str(nid) + " for " + str(row[2]))
+    print("Official User original: " + str(row[1]) + " as new: " + str(nid) + " to user " + str(row[2]))
     
     if nid == -1:
         print("Item doesn't exist. Failed.")
     else:
-        cur.execute("SELECT COUNT(`id`) FROM `copy_private_purchases` WHERE `userid` ='" + str(row[2]) + "' AND `itemid` ='" + str(nid) + "' AND `deleted` =0")
+        cur.execute("SELECT COUNT(`id`) FROM `private_purchases` WHERE `userid` ='" + str(row[2]) + "' AND `itemid` ='" + str(nid) + "' AND `deleted` =0")
         if cur.fetchall()[0][0] == 0:
-            cur.execute("INSERT INTO `copy_private_purchases` (`userid`, `itemid`, `timestamp`, `deleted`) VALUES ('" + str(row[2]) + "', '" + str(nid) + "', FROM_UNIXTIME('" + str(row[3]) + "'), '" + str(row[4]) + "');")
+            cur.execute("INSERT INTO `private_purchases` (`userid`, `itemid`, `timestamp`, `deleted`) VALUES ('" + str(row[2]) + "', '" + str(nid) + "', FROM_UNIXTIME('" + str(row[3]) + "'), '" + str(row[4]) + "');")
         else:
             print("User " + str(row[1]) + " has item " + str(nid) + " already.")
-        
 
 print("Transferring purchases")
 print("User purchases:");
@@ -167,14 +166,14 @@ cur.execute("SELECT * FROM `cbdata`.`purchases_usercat` ORDER BY `itemid`")
 for row in cur.fetchall():
     nid = get_new_itemid(str(row[1]), 1)
     
-    print("User " + str(row[1]) + " as " + str(nid) + " for " + str(row[2]))
+    print("User User original: " + str(row[1]) + " as new: " + str(nid) + " to user " + str(row[2]))
     
     if nid == -1:
         print("Item doesn't exist. Failed.")
     else:
-        cur.execute("SELECT COUNT(`id`) FROM `copy_private_purchases` WHERE `userid` ='" + str(row[2]) + "' AND `itemid` ='" + str(nid) + "' AND `deleted` =0")
+        cur.execute("SELECT COUNT(`id`) FROM `private_purchases` WHERE `userid` ='" + str(row[2]) + "' AND `itemid` ='" + str(nid) + "' AND `deleted` =0")
         if cur.fetchall()[0][0] == 0:
-            cur.execute("INSERT INTO `copy_private_purchases` (`userid`, `itemid`, `timestamp`, `deleted`) VALUES ('" + str(row[2]) + "', '" + str(nid) + "', FROM_UNIXTIME('" + str(row[3]) + "'), '" + str(row[4]) + "');")
+            cur.execute("INSERT INTO `private_purchases` (`userid`, `itemid`, `timestamp`, `deleted`) VALUES ('" + str(row[2]) + "', '" + str(nid) + "', FROM_UNIXTIME('" + str(row[3]) + "'), '" + str(row[4]) + "');")
         else:
             print("User " + str(row[1]) + " has item " + str(nid) + " already.")
 

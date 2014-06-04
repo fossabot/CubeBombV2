@@ -18,6 +18,11 @@ $(document).ready(function(){
     loadComments(id, 0);
     
     function loadComments(id, start){
+        return loadComments(id, start, false);
+    }
+    
+    function loadComments(id, start, clear){
+
         $.post("/api/loadItemComments.php", {id: id, start: start}, function(data){
             // Response
             
@@ -42,17 +47,26 @@ $(document).ready(function(){
                     if (typeof response == "object"){
                         var more = response[0]["more"];
                         
+                        if (clear){
+                            lowestId = 0;
+                            $fillspace.html("");
+                        }
+                        
                         var i = 1;
                         while (response[i] != null){
                             $fillspace.find(".message").each(function(){ $(this).remove() });
 
                             next = $commentTemplate.clone();
+                            
+                            if (response[i]["colored"] == true){
+                                next.find(".content").addClass("colored");
+                            }
 
-                            next.find(".content > span").text(response[i]["message"]);
-                            next.find(".content .details > span").text(response[i]["ago"]);
+                            next.find(".content > span").html(response[i]["message"]);
+                            next.find(".content .details > span").text(response[i]["ago"]).attr("title", response[i]["timestamp"]).tipsy();
                             next.find(".content .details a").text(response[i]["name"]);
-                            next.find(".avatar").css({backgroundImage: "url(/data/avatars/"+(response[i]["name"].toLowerCase())+".png)"});
-
+                            next.find(".avatar").css({backgroundImage: "url(/data/avatars/"+(response[i]["name"].toLowerCase())+".png)"}).tipsy();
+                            
                             next.appendTo($fillspace).show();
                             
                             // Check if this is the last one
@@ -86,4 +100,80 @@ $(document).ready(function(){
             }
         });
     }
+    
+    $("#s-comment").keyup(function(){
+        if ($.trim($(this).val()) == "" || $.trim($(this).val()) == $(this).attr("label")){
+            $("#s-submit").stop().slideUp(100);
+        }else{
+            $("#s-submit").stop().slideDown(100);
+        }
+    });
+    
+    var form = $("#id").parent();
+    
+    $("#s-submit").click(function(e){
+        // Prevent the click from triggering any other events.
+        // Don't allow form to be submitted prematurely
+        e.preventDefault();
+
+        if ($(this).hasClass("disabled")){
+            return;
+        }
+        
+        $(this).text("Submitting...");
+
+        // Check required fields
+        errorOccurred = false;
+        flagFields(form);
+
+        if (!errorOccurred){
+            // No errors caused by empty fields.
+
+            // Disable button and attach disabled class
+            $(this).addClass("disabled");
+            $(this).attr("disabled");
+
+            form.find(".error").hide();
+
+            // Convert the inputs into postable data
+            formData = form.serialize();
+            
+            button = $(this);
+
+            // Post data to handler given in form action  field.
+            // Response body sent to "response" field of function when request finishes
+            $.post(form.attr("action"), formData, function(response){
+                switch(response){
+                    case "x":
+                        error("Unknown error.", form);
+
+                        button.removeClass("disabled");
+                        button.removeAttr("disabled");
+                        button.text("Submit");
+                        
+                        break;
+                    case "y":
+                        $("#s-comment").val($("#s-comment").attr("label"));
+                        $("#s-submit").stop().slideUp(100);
+                        
+                        loadComments(id, 0, true);
+
+                        button.removeClass("disabled");
+                        button.removeAttr("disabled");
+                        button.text("Submit");
+
+                        break;
+                    default:
+                        // Got text as response. Assume it is an error.
+                        error(response, form);
+
+                        button.removeClass("disabled");
+                        button.removeAttr("disabled");
+                        button.text("Submit");
+                        
+                        break;
+                }
+            });
+        }
+    });
 });

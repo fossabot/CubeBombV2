@@ -129,16 +129,38 @@
                     </div>
                     
                     <div class="subtitle">Shoutbox</div>
-                    
-                    <div class="shoutbox shadow">
-                        <div class="comment">
-                            <div class="avatar"></div>
-                            <div class="content"></div>
+                    <div class="comments">
+                        <div class="post">
+                            <form action="/api/saveShoutboxComment.php">
+                                <div class="error"></div>
+                                <input type="hidden" name="id" id="id" value="<?php echo $id; ?>"/>
+                                <div class="inputRow">
+                                    <textarea name="comment" id="s-comment" label="Post comment" required></textarea>
+                                </div>
+                                <div class="inputRow">
+                                    <div class="sa-button" id="s-submit" style="display: none;">Submit</div>
+                                    <div style="clear: both;"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="comment" id="comment-template" style="display: none;">
+                            <div class="avatar" title="View profile"></div>
+                            <div class="content">
+                                <div class="details">
+                                    <a href="#">StuffMaker:</a>
+                                    <span>30 minutes ago</span>
+                                </div>
+                                <span>Comment</span>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="fillspace">
+                            <div class="message">Loading comments...</div>
                         </div>
                     </div>
                 </div>
                 <div class="right">
-                    <div class="avatar shadow" style="background-image: url(/data/avatars/<?php echo htmlspecialchars(strtolower($profileUser["username"])); ?>.png);"></div>
+                    <div class="avatar" style="background-image: url(/data/avatars/<?php echo htmlspecialchars(strtolower($profileUser["username"])); ?>.png);"></div>
                     
                     <div class="subtitle">Actions</div>
                     

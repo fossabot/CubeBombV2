@@ -2,8 +2,8 @@
 
 date_default_timezone_set("Etc/Universal");
 
-include_once($_SERVER["DOCUMENT_ROOT"] . "/include/timeago.inc.php");
-include_once("/var/www/secure/db.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/include/timeago.inc.php");
+require_once("/var/www/secure/db.php");
 
 $isLoggedIn = false;
 $userId = 0;
