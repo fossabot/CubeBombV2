@@ -43,13 +43,15 @@
 }
 
 .left .inventory {
-    background-color: rgb(218, 218, 218);
-    border-bottom: 10px solid rgb(224, 224, 224);
+    height: 436px;
+    position: relative;
+    background-color: #dadada;
+    border-bottom: 10px solid #e0e0e0;
 }
 
 .left .inventory .topbar {
     height: 38px;
-    background-color: rgb(224, 224, 224);
+    background-color: #e0e0e0;
 }
 .left .inventory .topbar a {
     display: inline-block;
@@ -62,7 +64,7 @@
     font-size: 15px;
 }
 .left .inventory .topbar a:hover{
-    background-color: rgb(87, 123, 168);
+    background-color: #577ba8;
     color: #fff;
 }
 
@@ -79,7 +81,7 @@
 .left .inventory .item .details {
     height: 16px;
     padding: 4px;
-    background-color: rgb(87, 123, 168);
+    background-color: #577ba8;
     color: #fff;
     text-align: left;
     line-height: 16px;
@@ -220,6 +222,7 @@
 }
 
 .right .friends {
+    position: relative;
     background-color: #dadada;
     border: 10px solid #e0e0e0;
     border-left: 0px;
@@ -247,12 +250,14 @@
 
 
 .nextBlock {
-    position: relative;
+    position: absolute;
     background-color: #dadada;
     text-align: center;
     font-size: 13px;
     color: #000;
     opacity: 1 !important;
+    right: 0px;
+    bottom: 0px;
 }
 .nextBlock:hover {
     background-color: #c4c4c4;

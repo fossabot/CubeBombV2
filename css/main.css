@@ -153,6 +153,9 @@ a:hover {
     background-color: #e0e0e0; /*#CCD5E6;*/
     position: absolute;
 }
+#sidebar a {
+    color: inherit;
+}
 #sidebar .avatar {
     width: 180px;
     height: 180px;

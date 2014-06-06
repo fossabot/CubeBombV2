@@ -54,14 +54,14 @@
                         <?php echo str_replace("\n", "<br />", htmlspecialchars($profile["message"])); ?>
                     </div>
                     <div class="subtitle">Inventory</div>
-                    <div class="inventory shadow">
+                    <div class="inventory">
                         <div class="topbar">
                             <a href="#" class="selected">Official Items (132)</a>
                             <a href="#">User Items (9)</a>
                             <div class="sort"></div>
                         </div>
                         
-                        <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
+                        <a href="/item/1"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2200</div>
                         </div></a>
                         <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
@@ -216,73 +216,27 @@
                         <div>Registered: <span><?php echo date("M. jS, Y", strtotime($profileUser["joinTime"])); ?></span></div>
                         <div>Profile views: <span><?php echo number_format($profileUser["profileViews"]); ?></span></div>
                         <div>Forum posts: <span>4,153</span></div>
+                        <div>Cubes given: <span>6,422</span></div>
                     </div>
                     
-                    <div class="subtitle">Friends (73)</div>
+                    <div class="subtitle" id="title-friends">Friends (...)</div>
                     
-                    <div class="friends shadow">
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=341);">
+                    <div class="friends">
+                        <a href="/profile/2">
+                            <div class="thumbnail" style="background-image: url(/data/avatars/stuffmaker.png);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                            <div class="thumbnail" style="background-image: url(/data/avatars/stuffmaker.png);">
+                                <div class="details">StuffMaker</div>
+                            </div>
+                            <div class="thumbnail" style="background-image: url(/data/avatars/stuffmaker.png);">
                                 <div class="details">StuffMaker</div>
                             </div>
                         </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=308);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=317);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=12);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=444);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=372);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=444);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=1);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=341);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=308);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="thumbnail" style="background-image: url(http://cubetales.com/images/avatar/?id=317);">
-                                <div class="details">StuffMaker</div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="nextBlock">
-                                <img class="icon" src="/images/icons/large/black/rightPointer.png" />
-                                <div>Page 1/7</div>
-                            </div>
-                        </a>
-                        
+                        <div class="nextBlock">
+                            <img class="icon" src="/images/icons/large/black/rightPointer.png" />
+                            <div>Page 1/7</div>
+                        </div>
                         <div style="clear: both;"></div>
                     </div>
                 </div>

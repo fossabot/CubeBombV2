@@ -5,12 +5,14 @@
                             <span class="counter"><?php echo number_format($user["cubes"]); ?></span>
                             <span class="hint">Cubes</span>
                         </div>
-                        <div class="button">
-                            <div class="sprite sprite-message"></div>
-                            <span class="hint">Messages</span>
-                            <span class="counter"><?php echo number_format($user["messages"]); ?></span>
-                            <div class="rightArrow" style="opacity: 0;"></div>
-                        </div>
+                        <a href="/inbox.php">
+                            <div class="button">
+                                <div class="sprite sprite-message"></div>
+                                <span class="hint">Messages</span>
+                                <span class="counter"><?php echo number_format($user["messages"]); ?></span>
+                                <div class="rightArrow" style="opacity: 0;"></div>
+                            </div>
+                        </a>
                         <div class="button">
                             <div class="sprite sprite-burst"></div>
                             <span class="hint">Notifications</span>
