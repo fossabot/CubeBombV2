@@ -1,0 +1,110 @@
+#content .title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+    color: #111;
+    float: left;
+}
+
+.f-stats {
+    display: inline-block;
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 5px;
+    margin: 10px 0px;
+    background-color: #e0e0e0;
+}
+
+.f-thread {
+    line-height: 25px;
+    padding: 8px 0px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #000 !important;
+}
+.f-thread:nth-child(even) {
+    background-color: #e0e0e0;
+}
+.f-thread:hover {
+    background-color: #CCD5E6;
+}
+.f-thread.key {
+    font-weight: bold;
+    margin: 0px;
+    background-color: transparent;
+    cursor: auto;
+}
+.f-thread span {
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+}
+.f-thread .f-icon {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    float: left;
+    margin: 0px 5px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.f-thread .f-icon {
+    background-image: url(/images/icons/small/black/file.png);
+}
+.f-thread .f-icon.sticky {
+    background-image: url(/images/icons/small/black/tag.png);
+}
+.f-thread .f-icon.locked {
+    background-image: url(/images/icons/small/black/x.png);
+    background-size: 15px;
+}
+.f-thread .f-title {
+    width: 412px;
+    margin-left: 3px;
+}
+.f-thread .f-poster {
+    width: 135px;
+}
+.f-thread .f-poster a { 
+    color: #000;
+    text-decoration: none;
+}
+.f-thread .f-poster a:hover {
+    color: #6e8eb5;
+}
+.f-thread .f-ago {
+    width: 98px;
+}
+.f-thread .f-views {
+    width: 52px;
+    text-align: right;
+}
+
+.t-post {
+    margin-bottom: 25px;
+}
+.t-left {
+    width: 130px;
+    margin-right: 25px;
+    display: inline-block;
+    float: left;
+}
+.t-left .avatar {
+    width: 130px;
+    height: 130px;
+    background-size: cover;
+}
+.t-left a {
+    display: block;
+    line-height: 25px;
+    margin-top: 12.5px;
+    font-size: 16px;
+}
+.t-right {
+    width: 545px;
+    display: inline-block;
+    padding: 25px;
+    background-color: #e0e0e0;
+}

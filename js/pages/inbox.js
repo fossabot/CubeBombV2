@@ -60,7 +60,8 @@ $(document).ready(function(){
                             if (response[i]["colored"] == true){
                                 next.find(".content").addClass("colored");
                             }
-
+                            
+                            next.attr("onclick", "window.location='/pm.php?id="+parseInt(response[i]["id"])+"'");
                             next.find(".m-subject").html(response[i]["subject"]);
                             next.find(".m-time").text(response[i]["ago"]).attr("title", response[i]["timestamp"]).tipsy();
                             next.find(".m-sender a").text(response[i]["name"]).attr("href", "/profile.php?id="+parseInt(response[i]["senderId"])).tipsy();

@@ -35,6 +35,26 @@
         return getSingleValue("SELECT `username` FROM `private_users` WHERE `id` =" . escape(intval($userId)) . " LIMIT 0, 1");
     }
 
+    function forumExists($id, $permissions=0){
+        return ((getSingleValue("SELECT COUNT(`id`) FROM `public_forums_sections` WHERE `deleted` = '0' AND `id` = '" . escape(intval($id)) . "' AND `minRank` <= '" . escape(intval($permissions)) . "'")) >= 1);
+    }
+
+    function isThreadDeleted($id){ 
+        return (getSingleValue("SELECT COUNT(`id`) FROM `public_forums_threads` WHERE `deleted` = '1' AND `id` = '" . escape(intval($id)) . "'") >= 1);
+    }
+
+    function threadExists($id){ 
+        return (getSingleValue("SELECT COUNT(`id`) FROM `public_forums_threads` WHERE `id` = '" . escape(intval($id)) . "'") >= 1);
+    }
+
+    function messageExists($id){
+        return (getSingleValue("SELECT COUNT(`id`) FROM `private_messages` WHERE `id` = '" . escape(intval($id)) . "'") >= 1);
+    }
+
+    function canAccessMessage($id, $userid){
+        return (getSingleValue("SELECT COUNT(`id`) FROM `private_messages` WHERE `id` = '" . escape(intval($id)) . "' AND `receiverId` = '" . escape(intval($userid)) . "' AND `deleted` =0") >= 1);
+    }
+
 
     // http://css-tricks.com/snippets/php/time-ago-function/
     function ago($time) {

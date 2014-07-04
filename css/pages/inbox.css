@@ -57,8 +57,9 @@
     font-weight: bold;
     background-color: transparent !important;
 }
-.message div {
+.message span {
     display: inline-block;
+    float: left;
 }
 .m-select {
     width: 20px;

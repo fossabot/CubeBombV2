@@ -1,0 +1,14 @@
+#content .title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+    color: #111;
+    float: left;
+}
+.message .left {
+    width: 500px;
+    margin-right: 25px;
+    display: inline-block;
+    float: left;
+    padding: 25px;
+    background-color: #e0e0e0;
+}

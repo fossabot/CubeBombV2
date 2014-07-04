@@ -32,19 +32,21 @@
                 </div>
                 <div class="inbox">
                     <div class="message header">
-                        <div class="m-select">&nbsp;</div>
-                        <div class="m-subject">Subject</div>
-                        <div class="m-sender"><a href="#2" title="Visit profile">Sender</a></div>
-                        <div class="m-time">Time</div>
-                        <div class="m-flags">Flags</div>
+                        <span class="m-select">&nbsp;</span>
+                        <span class="m-subject">Subject</span>
+                        <span class="m-sender"><a href="#2" title="Visit profile">Sender</a></span>
+                        <span class="m-time">Time</span>
+                        <span class="m-flags">Flags</span>
+                        <div style="clear: both;"></div>
                     </div>
                     <div class="messagearea">
                         <div class="message" id="message-template">
-                            <div class="m-select"><input type="checkbox" class="m-check" /></div>
-                            <div class="m-subject">Subject</div>
-                            <div class="m-sender"><a href="#" title="Visit profile">Sender</a></div>
-                            <div class="m-time">Time</div>
-                            <div class="m-flags">Flags</div>
+                            <span class="m-select"><input type="checkbox" class="m-check" /></span>
+                            <span class="m-subject">Subject</span>
+                            <span class="m-sender"><a href="#" title="Visit profile">Sender</a></span>
+                            <span class="m-time">Time</span>
+                            <span class="m-flags">Flags</span>
+                            <div style="clear: both;"></div>
                         </div>
                     </div>
                 </div>

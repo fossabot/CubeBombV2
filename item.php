@@ -38,17 +38,17 @@
 
     require($_SERVER["DOCUMENT_ROOT"] . "/include/page-top.php");
 ?>
-                <div class="breadcrumb">
-                    <!--<div class="star">&#9734; &#9733;</div>-->
-                    <a href="#">&laquo; Return to Shop</a>
-                    
-                </div>
                 <div class="left">
-                    <div class="description">
-                        <div class="namebar">
-                            <span class="title"><?php echo htmlspecialchars($item["name"]); ?></span>
-                            <div style="clear: both;"></div>
-                        </div>                        
+                    <div class="namebar">
+                        <span class="title"><?php echo htmlspecialchars($item["name"]); ?></span>
+                        <div style="clear: both;"></div>
+                    </div>    
+                    <div class="breadcrumb">
+                        <a href="#">Shop Home</a> / <?php echo htmlspecialchars($item["name"]); ?>
+                    </div>
+                    <div style="clear: both;"></div>
+                    
+                    <div class="description">                    
                         <?php echo nl2br(htmlspecialchars($item["description"])); ?>
                     </div>
                     <div class="purchasebox">

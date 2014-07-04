@@ -28,7 +28,7 @@
 }
 
 .left .description {
-    height: 268px;
+    height: 249px;
     overflow-x: hidden;
     overflow-y: auto;
     font-size: 15px;
@@ -238,3 +238,14 @@
     bottom: 12px;
     text-align: center;
 }
+/*
+.breadcrumb {
+    height: 25px;
+    line-height: 25px;
+    margin: 10px 0px;
+    padding: 0px 5px;
+    display: block;
+    float: none;
+    background-color: transparent;
+}
+*/
