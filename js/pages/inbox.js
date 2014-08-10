@@ -68,7 +68,7 @@ $(document).ready(function(){
                             next.find(".m-flags").text("");
                             
                             if (response[i]["seen"] == "0"){
-                                next.addClass("unread");
+                                next.find(".message").addClass("unread");
                             }
                             
                             next.appendTo($messagearea).show();

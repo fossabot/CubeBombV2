@@ -37,6 +37,7 @@
 .message {
     padding: 10px 0px;
     background-color: #e6e6e6;
+    cursor: pointer;
 }
 .message:nth-child(even) {
     background-color: #e0e0e0;
@@ -60,11 +61,19 @@
 .message span {
     display: inline-block;
     float: left;
+    font-weight: inherit;
 }
-.m-select {
-    width: 20px;
-    text-align: center;
-    margin-left: 10px;
+.message-content {
+    padding: 25px;
+    font-weight: normal;
+    cursor: auto;
+    background-color: #ebebeb;
+}
+.message-content .m-left {
+    display: inline-block;
+    float: left;
+    margin-right: 25px;
+    width: 450px;
 }
 .m-subject {
     width: 370px;
@@ -86,4 +95,7 @@
 }
 #message-template {
     display: none;
+}
+#load-more {
+    margin-top: 25px;
 }

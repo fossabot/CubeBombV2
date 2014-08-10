@@ -47,12 +47,23 @@
         return (getSingleValue("SELECT COUNT(`id`) FROM `public_forums_threads` WHERE `id` = '" . escape(intval($id)) . "'") >= 1);
     }
 
+    function postExists($id){
+        return (getSingleValue("SELECT COUNT(`id`) FROM `public_forums_posts` WHERE `deleted` = '0' AND `id` = '" . escape(intval($id)) . "'") >= 1);
+    }
+
     function messageExists($id){
         return (getSingleValue("SELECT COUNT(`id`) FROM `private_messages` WHERE `id` = '" . escape(intval($id)) . "'") >= 1);
     }
 
     function canAccessMessage($id, $userid){
         return (getSingleValue("SELECT COUNT(`id`) FROM `private_messages` WHERE `id` = '" . escape(intval($id)) . "' AND `receiverId` = '" . escape(intval($userid)) . "' AND `deleted` =0") >= 1);
+    }
+
+    function cbbbc($text){
+        $find = array('["', '"]', "[i]", "[/i]", "[b]", "[/b]", "[bold]", "[/bold]", "[italic]", "[/italic]", "[red]", "[purple]", "[green]", "[black]", "[yellow]", "[pink]", "[orange]", "[blue]", "[/color]", "[under]", "[/under]");
+        $replace = array("<blockquote>", "</blockquote>", "<em>", "</em>", "<strong>", "</strong>", "<strong>", "</strong>", "<em>", "</em>");
+        
+        return str_replace($find, $replace, $text);
     }
 
 

@@ -85,26 +85,75 @@
 .t-post {
     margin-bottom: 25px;
 }
+.t-post.deleted {
+    opacity: 0.55;
+}
 .t-left {
     width: 130px;
     margin-right: 25px;
     display: inline-block;
     float: left;
+    line-height: 22px;
+}
+.t-left .date, .t-left .badge {
+    color: #696969;
+    font-size: 14px;
 }
 .t-left .avatar {
     width: 130px;
     height: 130px;
     background-size: cover;
-}
-.t-left a {
-    display: block;
-    line-height: 25px;
-    margin-top: 12.5px;
-    font-size: 16px;
+    margin-bottom: 12.5px;
 }
 .t-right {
     width: 545px;
+    min-height: 137px;
     display: inline-block;
     padding: 25px;
     background-color: #e0e0e0;
+    line-height: 20px;
+}
+.t-post.deleted .t-right {
+    background-color: #DFBEBE;
+}
+.t-info {
+    margin-bottom: 12.5px;
+}
+.t-donate {
+    height: 30px; 
+    width: auto;
+    display: inline-block;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    padding: 0px 10px;
+    line-height: 30px;
+    margin-top: 12.5px;
+    overflow: hidden;
+}
+.t-donate .icon {
+    width: 20px;
+    height: 20px;
+    margin: 5px 10px 5px 0px;
+    display: inline-block;
+    float: left;
+}
+.t-donate span {
+    float: right;
+    display: inline-block;
+}
+.t-give {
+    border: 1px solid #e0e0e0;
+    background-color: transparent;
+    color: #000;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.t-give:hover {
+    background-color: #93c379;
+    color: #fff;
+    border: none;
+}
+
+.mod-bar {
+    margin-bottom: 25px;
 }

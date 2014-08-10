@@ -306,6 +306,22 @@ form .error > ul li {
     background-color: #e0e0e0;
 }
 
+.notice {
+    height: 35px;
+    margin-bottom: 25px;
+    background-color: #577ba8;
+    color: #fff;
+    line-height: 35px;
+    padding: 0px 10px;
+}
+.notice a {
+    color: #eaf3ff;
+    float: right;
+}
+.notice a:hover {
+    color: #fff;
+}
+
 .inputRow {
     margin-bottom: 20px;
     line-height: 42px;
@@ -414,8 +430,10 @@ input[type=checkbox] {
 }
 
 .sa-button.compact {
-    padding: 6px 10px;
+    padding: 5px 10px;
     font-size: 13px;
+    height: auto;
+    line-height: 15px;
 }
 
 select {
@@ -423,11 +441,12 @@ select {
     height: 42px;
     padding: 0px 12px 0px 12px;
     margin: 0px;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVQ4T2NkoBAwUqifYRgasBgYJg1AfBdH2KgAxeuBOBYmjx4GZkCJhUDsBcT30QxRBPK3QzWfxmUASNwJiCcDsQsQP4cqlALSu4E4F4j3IRuMKxYCoE4FGQICe6H8jehewxeNOUDFEVANy4H0VGzhQigdgALsPxA3YdMMEiNkAC59cPFRAxgYAPfrEhFDXY5SAAAAAElFTkSuQmCC) no-repeat right #fff;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAABIAAAASABGyWs+AAAAbElEQVQoz9WQuxFAUBBF7zM6eBGZoQUK0AB9UA4VaOXlJIZujsDvScTsJveeOcHOGvQ+gb4jDEofPNNwJPYtWEg4W8JKvmddsGQmQoiYmfLktyBqRiyWieqmviBaHI7GZ+HjtE5WqPeR+cOrNx//Tx8aA8Z7AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE0LTA4LTA4VDE2OjUwOjI4LTA2OjAwki8pNwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNC0wOC0wOFQxNjo0NzowNC0wNjowMEWlODsAAAAASUVORK5CYII=) no-repeat right #fff;
     background-position: right center;
     background-position: calc(100% - 10px) center;
-    
-    border: 1px solid #DADADA;
+    background-color: #577ba8;
+    color: #fff;
+    border: none;
     outline: none;
     border-radius: 0px;
     box-sizing: border-box;
@@ -438,20 +457,38 @@ select {
     -webkit-appearance: none;
     cursor: pointer;
 }
-
-select:after {
-    content: "v";
-    float: right;
-    font-size: 12px;
-    line-height: 42px;
-    margin-right: 13px;
+select:hover {
+    background-color: #6e8eb5;
 }
-
 select option:first-of-type {
-    color: #8e8e8e;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+}
+
+.pageBar {
+    height: 25px;
+}
+.pageBar.top {
+    margin-bottom: 25px;
+}
+.pageBar a {
+    height: 25px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    padding: 0px 8px;
+    line-height: 25px;
+    background-color: #e0e0e0;
+    color: #000;
+    text-decoration: none;
+}
+.pageBar a:hover, .pageBar a.current {
+    background-color: #577ba8;
+    color: #fff;
+}
+.pageBar a.current {
+    font-weight: bold;
 }
 
 

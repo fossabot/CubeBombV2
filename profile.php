@@ -160,7 +160,7 @@
                     </div>
                 </div>
                 <div class="right">
-                    <div class="avatar" style="background-image: url(/data/avatars/<?php echo htmlspecialchars(strtolower($profileUser["username"])); ?>.png);"></div>
+                    <div class="avatar" style="background-image: url(/data/avatars/<?php echo rawurlencode(strtolower($profileUser["username"])); ?>.png);"></div>
                     
                     <div class="subtitle">Actions</div>
                     
