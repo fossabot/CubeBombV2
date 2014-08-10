@@ -11,7 +11,7 @@ $(window).load(function(){
         
         var mouse = false;
         
-        $(this).attr("title", "Cubes given to this post. Click to open.").tipsy({delayIn: 0});
+        $(this).attr("title", "Cubes given for this post.<br/>Click to open.").tipsy({delayIn: 0, html: true});
         
         $(this).click(function(e){
             $('.tipsy:last').remove();
@@ -28,7 +28,9 @@ $(window).load(function(){
                 $.post("/api/loadPostGiver.php", {id: $(this).parent().parent().find(".t-post-id").val()}, function(data){
                     if (mouse){
                         span.text(data);
-                        span.parent().css({backgroundColor: "#6FA857", color: "#fff"}, 200);
+                        if (data == "Give 5 Cubes?"){
+                            span.css({display: "block"}).parent().css({backgroundColor: "#6FA857", color: "#fff", textAlign: "center", width: "110px"});
+                        }
                     }
                 });
             }else{
@@ -40,7 +42,8 @@ $(window).load(function(){
             
             $(this).find("span").text(originalValue).css("float", "right");
             $(this).find(".icon").show();
-            $(this).css({backgroundColor: "#e0e0e0", color: "#000"}, 200);
+            $(this).css({backgroundColor: "#e0e0e0", color: "#000", textAlign: "left", width: "auto"}).find("span").css({display: "inline-block"});
+            
         });
     });
 });
