@@ -2,7 +2,7 @@
                     <div class="block">
                         <div class="info">
                             <div class="sprite sprite-cubes"></div>
-                            <span class="counter"><?php echo number_format($user["cubes"]); ?></span>
+                            <span class="counter" id="cubes-counter"><?php echo number_format($user["cubes"]); ?></span>
                             <span class="hint">Cubes</span>
                         </div>
                         <a href="/inbox.php">

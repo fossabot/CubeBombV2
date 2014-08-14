@@ -23,6 +23,9 @@
     text-decoration: none !important;
     color: #000 !important;
 }
+.f-thread.deleted {
+    opacity: 0.4;
+}
 .f-thread:nth-child(even) {
     background-color: #e0e0e0;
 }
@@ -107,11 +110,22 @@
 }
 .t-right {
     width: 545px;
-    min-height: 137px;
+    min-height: 147.5px;
     display: inline-block;
     padding: 25px;
     background-color: #e0e0e0;
     line-height: 20px;
+}
+.t-actions {
+    width: 595px;
+    display: inline-block;
+    float: right;
+    height: 25px;
+    margin-top: 12.5px;
+}
+.t-actions .sa-button {
+    float: right;
+    margin-left: 10px;
 }
 .t-post.deleted .t-right {
     background-color: #DFBEBE;
@@ -141,19 +155,26 @@
     float: right;
     display: inline-block;
 }
-.t-give {
-    border: 1px solid #e0e0e0;
-    background-color: transparent;
-    color: #000;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-.t-give:hover {
-    background-color: #93c379;
+.t-donate.ready {
+    background-color: #6FA857;
     color: #fff;
-    border: none;
+    text-align: center;
+    width: 110px;
+}
+.t-donate.ready span {
+    display: block;
+}
+.t-donate.green {
+    color: #fff;
+    background-color: #6FA857;
 }
 
 .mod-bar {
     margin-bottom: 25px;
+}
+
+blockquote {
+    padding: 12.5px;
+    margin: 0px;
+    border-left: 2px solid #BBB;
 }

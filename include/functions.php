@@ -60,8 +60,8 @@
     }
 
     function cbbbc($text){
-        $find = array('["', '"]', "[i]", "[/i]", "[b]", "[/b]", "[bold]", "[/bold]", "[italic]", "[/italic]", "[red]", "[purple]", "[green]", "[black]", "[yellow]", "[pink]", "[orange]", "[blue]", "[/color]", "[under]", "[/under]");
-        $replace = array("<blockquote>", "</blockquote>", "<em>", "</em>", "<strong>", "</strong>", "<strong>", "</strong>", "<em>", "</em>");
+        $find = array('["', '"]', '[&quot;', '&quot;]', "[i]", "[/i]", "[b]", "[/b]", "[bold]", "[/bold]", "[italic]", "[/italic]", "[red]", "[purple]", "[green]", "[black]", "[yellow]", "[pink]", "[orange]", "[blue]", "[/color]", "[under]", "[/under]", "[u]", "[/u]");
+        $replace = array("<blockquote>", "</blockquote>", "<blockquote>", "</blockquote>", "<em>", "</em>", "<strong>", "</strong>", "<strong>", "</strong>", "<em>", "</em>");
         
         return str_replace($find, $replace, $text);
     }

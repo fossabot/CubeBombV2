@@ -314,6 +314,9 @@ form .error > ul li {
     line-height: 35px;
     padding: 0px 10px;
 }
+.notice.red {
+    background-color: #d34c4c;
+}
 .notice a {
     color: #eaf3ff;
     float: right;
@@ -403,6 +406,31 @@ input[type=checkbox] {
 .sa-button:disabled {
     background-color: #989ca7;
 }
+.sa-button.light {
+    color: #577ba8;
+    background-color: transparent;
+    border: 1px solid #577ba8;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 19px;
+}
+.sa-button.light:hover {
+    color: #fff;
+    background-color: #6e8eb5;
+    height: 42px;
+    line-height: 42px;
+    padding: 0px 20px;
+    border: none;
+}
+.sa-button.light.compact {
+    height: 25px;
+    line-height: 23px;
+    padding: 0px 9px;
+}
+.sa-button.light.compact:hover {
+    line-height: 25px;
+    padding: 0 10px;
+}
 
 .sa-button.right {
     float: right;
@@ -430,10 +458,10 @@ input[type=checkbox] {
 }
 
 .sa-button.compact {
-    padding: 5px 10px;
+    padding: 0px 10px;
     font-size: 13px;
-    height: auto;
-    line-height: 15px;
+    height: 25px;
+    line-height: 25px;
 }
 
 select {
