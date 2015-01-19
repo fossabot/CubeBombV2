@@ -378,6 +378,7 @@
                         <div class="t-actions">
                             <div class="sa-button compact" class="t-quote">Quote</div>
                             <div class="sa-button compact light" class="t-quote">Report</div>
+                            Edited by StuffMaker 36 minutes ago
                         </div>
                         <div style="clear: both;"></div>
                     </div>

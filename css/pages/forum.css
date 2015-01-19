@@ -122,6 +122,7 @@
     float: right;
     height: 25px;
     margin-top: 12.5px;
+    line-height: 25px;
 }
 .t-actions .sa-button {
     float: right;
