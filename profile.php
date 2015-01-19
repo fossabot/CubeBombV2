@@ -1,21 +1,24 @@
 <?php
     include_once($_SERVER["DOCUMENT_ROOT"] . "/include/page-utils.php");
 
+    // Set flag for if this user does not exist
     $noExist = true;
 
     $profileUser;
-    
+    $id = 0;
+
     if (isset($_GET["id"])){
         $id = trim($_GET["id"]);
-    
+
         if (is_numeric($id)){
             $id = intval($id);
-            
+
+            // Load profile data
             if (userExistsNotDeleted($id)){
                 $noExist = false;
-                
+
                 $profileUser = getArray("SELECT * FROM `private_users` WHERE `id` =" . escape($id) . " ORDER BY `id` ASC LIMIT 0, 1");
-                
+
                 if (getSingleValue("SELECT count(`id`) FROM `public_users_profiles` WHERE `userid` =" . escape($id) . " ORDER BY `timestamp` DESC LIMIT 0, 1") == 1){
                     // Use actual profile data
                     $profile = getArray("SELECT * FROM `public_users_profiles` WHERE `userid` =" . escape($id) . " ORDER BY `timestamp` DESC LIMIT 0, 1");
@@ -60,7 +63,7 @@
                             <a href="#">User Items (9)</a>
                             <div class="sort"></div>
                         </div>
-                        
+
                         <a href="/item/1"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2200</div>
                         </div></a>
@@ -118,7 +121,7 @@
                         <a href="#"><div class="item" style="background-image: url(https://www.cubebomb.com/data/items/previews/200/<?php echo rand(1, 1000); ?>.png);">
                                 <div class="details"><img class="icon" src="/images/icons/small/white/cubes.png"/>2208</div>
                         </div></a>
-                        
+
                         <a href="#">
                             <div class="nextBlock">
                                 <img class="icon" src="/images/icons/large/black/rightPointer.png" />
@@ -127,7 +130,7 @@
                         </a>
                         <div style="clear: both;"></div>
                     </div>
-                    
+
                     <div class="subtitle">Shoutbox</div>
                     <div class="comments">
                         <div class="post">
@@ -161,22 +164,22 @@
                 </div>
                 <div class="right">
                     <div class="avatar" style="background-image: url(/data/avatars/<?php echo rawurlencode(strtolower($profileUser["username"])); ?>.png);"></div>
-                    
+
                     <div class="subtitle">Actions</div>
-                    
+
                     <div class="actions shadow">
                         <a href="#">Send Message <div class="sprite sprite-rightPointer"></div></a>
                         <a href="#">Friend Request <div class="sprite sprite-rightPointer"></div></a>
                         <a href="#">Block User <div class="sprite sprite-rightPointer"></div></a>
                         <a href="#">Subscribe <div class="sprite sprite-rightPointer"></div></a>
-                        
+
                         <?php
                             if ($user["permissions"] >= $_PADMIN){
                         ?>
                         <div id="adminDropdownButton" style="height: 40px; cursor: pointer;">
                             <div class="rule"><div class="text">Administration [Expand]</div></div>
                         </div>
-                        
+
                         <div id="adminDropdown" style="display: none;">
                             <a href="#">Send Notification <div class="sprite sprite-rightPointer"></div></a>
                             <a href="#">Edit Profile <div class="sprite sprite-rightPointer"></div></a>
@@ -194,14 +197,14 @@
                             }
                         ?>
                     </div>
-                    
+
                     <div class="subtitle">Info</div>
-                    
+
                     <div class="stats shadow">
                         <?php
                         switch ($profileUser["permissions"]){
                             case $_PARTIST:
-                                ?><div style="color: #fff; background-color: #8f2ac5;">Artist</div><?php 
+                                ?><div style="color: #fff; background-color: #8f2ac5;">Artist</div><?php
                                 break;
                             case $_PMOD:
                                 ?><div style="color: #fff; background-color: #6cc52a;">Moderator</div><?php
@@ -218,9 +221,9 @@
                         <div>Forum posts: <span>4,153</span></div>
                         <div>Cubes given: <span>6,422</span></div>
                     </div>
-                    
+
                     <div class="subtitle" id="title-friends">Friends (...)</div>
-                    
+
                     <div class="friends">
                         <a href="/profile/2">
                             <div class="thumbnail" style="background-image: url(/data/avatars/stuffmaker.png);">
@@ -240,7 +243,7 @@
                         <div style="clear: both;"></div>
                     </div>
                 </div>
-<?php                        
+<?php
     }else{
 ?>
                 <h1>Error:</h1>

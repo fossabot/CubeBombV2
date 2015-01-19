@@ -10,20 +10,20 @@
     if (isset($_GET["index"])){
         $isIndex = true;
     }
-    
+
     // Test id. If this isn't the board index, process the request
     if (isset($_GET["id"]) && intval($_GET["id"]) > 0 && !$isIndex){
         $id = intval($_GET["id"]);
-                
+
         // Determine what the user wants
         if (isset($_GET["thread"])){
             $isThread = true;
-            
+
             if (isThreadDeleted($id)){
                 // Kick out non mods
                 if ($user["permissions"] < $_PMOD){
                     //$forumid = getSingleValue("SELECT `forumid` FROM `public_forums_threads` WHERE `id` = '" . escape($id) . "'");
-                    
+
                     header("Location:/forum.php?forum&id=$forumid&deleted");
                     exit;
                 }
@@ -31,28 +31,28 @@
                 header("Location:/forum.php?index&unknown");
                 exit;
             }
-            
+
             $additionalQuery = "";
             if ($user["permissions"] < $_PMOD){
                 $additionalQuery = "AND `deleted` ='0' AND `ghost` ='0'";
             }
-            
+
             $thread = getArray("SELECT * FROM `public_forums_threads` WHERE `id` ='" . escape($id) . "'");
             $forum = getArray("SELECT `id`, `name` FROM `public_forums_sections` WHERE `id` = '" . escape(intval($thread["forumid"])) . "'");
-            
+
             $posts = getSingleValue("SELECT COUNT(`id`) FROM `public_forums_posts` WHERE `postid` = '" . escape(intval($id)). "' $additionalQuery LIMIT 1");
-            
+
             $lastpost = strtotime(getSingleValue("SELECT `timestamp` FROM `public_forums_posts` WHERE `postid` = '" . escape(intval($id)). "' AND `deleted` = '0' ORDER BY `timestamp` DESC LIMIT 1"));
-            
+
             // Pagination
-            
+
             $page = 1;
             $pageSize = 20;
-            
+
             if (isset($_GET["page"]) && trim($_GET["page"]) != "" && is_numeric($_GET["page"])){
                 $page = intval(trim(escape($_GET["page"])));
             }
-            
+
             $numRows = $posts;
             $maxPages = ceil($numRows/$pageSize);
 
@@ -63,51 +63,51 @@
                 $page = 1;
             }
             $queryPage = $pageSize * ($page-1);
-            
+
             $breadcrumb = "<a href=\"/forum.php?index\">Forum Home</a> / <a href=\"/forum.php?forum&id=" . $thread["forumid"] . "\">" . htmlspecialchars($forum["name"]) . "</a>";
             $breadcrumb .= " / Current Thread";
-            
+
             if ($page != 1){
                 $breadcrumb .= " (Page $page)";
             }
-            
+
             // Increment view counter
             query("UPDATE `public_forums_threads` SET `views` = `views`+1 WHERE `id` = '" . escape(intval($id)) . "';");
-            
+
         }else if (isset($_GET["forum"])){
             $isForum = true;
-            
+
             if (!forumExists($id)){
                 header("Location:/forum.php?index&unknown");
                 exit;
             }
-            
+
             if (isset($_GET["deleted"])){
-                
+
             }
-            
+
             $additionalQuery = "";
             if ($user["permissions"] < $_PMOD){
                 $additionalQuery = "AND `deleted` ='0'";
             }
-            
+
             $forum = getArray("SELECT `id`, `name` FROM `public_forums_sections` WHERE `id` = '" . escape(intval($id)) . "'");
-            
+
             $threads = getSingleValue("SELECT COUNT(`id`) FROM `public_forums_threads` WHERE `forumid` = '" . escape($id) . "' $additionalQuery LIMIT 1");
-            
+
             $breadcrumb = "<a href=\"/forum.php?index\">Forum Home</a> / " . htmlspecialchars($forum["name"]);
-            
-            
-            
+
+
+
             // Pagination
-            
+
             $page = 1;
             $pageSize = 50;
-            
+
             if (isset($_GET["page"]) && trim($_GET["page"]) != "" && is_numeric($_GET["page"])){
                 $page = intval(trim(escape($_GET["page"])));
             }
-            
+
             $numRows = $threads;
             $maxPages = ceil($numRows/$pageSize);
 
@@ -137,11 +137,11 @@
     $pageCss = "/css/pages/forum.css";
 
     require($_SERVER["DOCUMENT_ROOT"] . "/include/page-top.php");
-    
+
 ?>
                 <div class="sort-results">
                     <span class="title">
-                        <?php 
+                        <?php
                             if ($isThread){
                                 echo htmlspecialchars($thread["title"]);
                             }else if ($isForum){
@@ -161,13 +161,13 @@
                     <div style="clear: both;"></div>
                 </div>
                 <?php if ($isForum){
-                
+
                 if ($maxPages > 1){ ?>
                     <div class="pageBar top">
                         <?php
                         $idealWidth = 11;
                         $centerDistance = 6;
-                            
+
                         $startPoint = 0;
                         $width = $idealWidth;
 
@@ -185,15 +185,15 @@
                                 $startPoint = 0;
                             }
                         }
-                        
+
                         if ($startPoint > 0){ ?>
                         <a href="/forum.php?forum&id=<?php echo $id; ?>&page=1">First</a>
                         <?php }
-                        
+
                         for ($i = $startPoint; $i < $startPoint+$width; $i++){ ?>
                         <a href="/forum.php?forum&id=<?php echo $id; ?>&page=<?php echo ($i+1); ?>" <?php if ($page == $i+1){ ?>class="current"<?php } ?>><?php echo number_format($i+1); ?></a>
-                        <?php } 
-                        
+                        <?php }
+
                         if ($startPoint + $width < $maxPages){?>
                         <a href="/forum.php?forum&id=<?php echo $id; ?>&page=<?php echo $maxPages; ?>">Last (<?php echo number_format($maxPages); ?>)</a>
                         <?php } ?>
@@ -209,13 +209,13 @@
                         <span class="f-views">Views</span>
                         <div style="clear: both;"></div>
                     </div>
-                    <?php 
-                    
+                    <?php
+
                     $additionalQuery = "";
                     if ($user["permissions"] < $_PMOD){
                         $additionalQuery = "WHERE a.deleted =0";
                     }
-                            
+
                     $results = query("SELECT a.*, c.`userid` as `lastposter`, c.`timestamp` AS `lastpost`
                                         FROM `public_forums_threads` a
                                             INNER JOIN `public_forums_posts` c
@@ -230,7 +230,7 @@
                                         AND a.forumid ='" . escape($id) . "'
                                         ORDER BY a.`sticky` DESC, c.`timestamp` DESC
                                         LIMIT $queryPage, 50");
-                    
+
                     while ($post = fetchRows($results)){ ?>
                     <div class="f-thread<?php if ($post["sticky"]){ ?> sticky<?php } if ($post["deleted"]){ ?> deleted<?php } ?>" onclick="window.location='/forum.php?thread&id=<?php echo $post["id"]; ?>'">
                         <?php if ($post["sticky"]){ ?>
@@ -254,30 +254,30 @@
                 <?php if ($maxPages > 1){ ?>
                 <div class="pageBar" style="margin-top: 25px;">
                     <?php
-                    // Bottom Pagination    
-                    
+                    // Bottom Pagination
+
                     if ($startPoint > 0){ ?>
                     <a href="/forum.php?forum&id=<?php echo $id; ?>&page=1">First</a>
                     <?php }
 
                     for ($i = $startPoint; $i < $startPoint+$width; $i++){ ?>
                     <a href="/forum.php?forum&id=<?php echo $id; ?>&page=<?php echo ($i+1); ?>" <?php if ($page == $i+1){ ?>class="current"<?php } ?>><?php echo number_format($i+1); ?></a>
-                    <?php } 
+                    <?php }
 
                     if ($startPoint + $width < $maxPages){?>
                     <a href="/forum.php?forum&id=<?php echo $id; ?>&page=<?php echo $maxPages; ?>">Last (<?php echo number_format($maxPages); ?>)</a>
                     <?php } ?>
                 </div>
                 <?php }
-                } else if ($isThread){ 
-                
+                } else if ($isThread){
+
                 if ($thread["deleted"]){ ?>
                 <div class="notice red" style="margin-bottom: 12.5px">
-                    This thread is deleted, and is unavailable to the public. Only moderators can read it.
+                    This thread is deleted and is only visible to moderators.
                 </div>
-                <?php 
+                <?php
                 }
-                            
+
                 if ($thread["id"] <= 14705){ ?>
                 <div class="notice">
                     This thread is locked because it is from the original CubeBomb. <a href="/">Details &raquo;</a>
@@ -295,7 +295,7 @@
                     <div class="sa-button compact red" title="Remove thread, make available to moderators only.">Delete Thread</div>
                     <div class="sa-button compact red" title="Remove from forum index, make available to public via url only.">Hide Thread</div>
                     <select id="mod-move" style="display: inline-block; width: 125px; height: 25px;">
-                        <?php 
+                        <?php
                         $results = query("SELECT * FROM `public_forums_sections` WHERE `deleted` =0 LIMIT 50");
                         while ($section = fetchRows($results)){ ?>
                         <option value="<?php echo $section["id"]; ?>"><?php echo htmlspecialchars($section["name"]); ?></option>
@@ -303,13 +303,13 @@
                     </select>
                     <div class="sa-button compact red" title="Move thread to another forum.">Move Thread</div>
                 </div>
-                <?php } 
+                <?php }
                     if ($maxPages > 1){ ?>
                     <div class="pageBar top">
                         <?php
                         $idealWidth = 13;
                         $centerDistance = 7;
-                            
+
                         $startPoint = 0;
                         $width = $idealWidth;
 
@@ -327,32 +327,32 @@
                                 $startPoint = 0;
                             }
                         }
-                        
+
                         if ($startPoint > 0){ ?>
                         <a href="/forum.php?thread&id=<?php echo $id; ?>&page=1">First</a>
                         <?php }
-                        
+
                         for ($i = $startPoint; $i < $startPoint+$width; $i++){ ?>
                         <a href="/forum.php?thread&id=<?php echo $id; ?>&page=<?php echo ($i+1); ?>" <?php if ($page == $i+1){ ?>class="current"<?php } ?>><?php echo number_format($i+1); ?></a>
-                        <?php } 
-                        
+                        <?php }
+
                         if ($startPoint + $width < $maxPages){?>
                         <a href="/forum.php?thread&id=<?php echo $id; ?>&page=<?php echo $maxPages; ?>">Last (<?php echo number_format($maxPages); ?>)</a>
                         <?php } ?>
                     </div>
                 <?php } ?>
-                
+
                 <div class="thread">
                     <?php
                         $additionalQuery = "";
                         if ($user["permissions"] < $_PMOD){
                             $additionalQuery = " AND `deleted` = '0'";
-                        }    
-                        
+                        }
+
                         $results = query("SELECT * FROM `public_forums_posts` WHERE `postid` = '" . escape(intval($id)) . "' $additionalQuery ORDER BY `id` ASC LIMIT $queryPage, $pageSize");
-                        
-                        
-                        while ($post = fetchRows($results)){ 
+
+
+                        while ($post = fetchRows($results)){
                         $post["username"] = getUsername($post["userid"]);
                         $donatedBefore = (getSingleValue("SELECT COUNT(id) FROM `public_forums_donations` WHERE `postid` = '" . $post["id"] . "' AND `userid` = '" . $user["id"] . "'") >= 1);
                     ?>
@@ -366,7 +366,7 @@
                             <?php if ($post["userid"] == 2){ ?><div class="catch">I make stuff :)</div><?php } ?>
                             <div class="date" title="<?php echo date("M j, Y H:i:s", strtotime($post["timestamp"])); ?>"><?php echo ((time()-strtotime($post["timestamp"]) >= 604800) ? date("M j, Y H:i", strtotime($post["timestamp"])) : ago($post["timestamp"]) . " ago"); ?></div>
                             <!--<div class="badge">Top 10 poster</div>-->
-                            
+
                             <div class="t-donate<?php if ($post["userid"] == $user["id"] || $donatedBefore){ ?> disabled<?php } if ($donatedBefore) { ?> green<?php } ?>">
                                 <span><?php echo number_format(getSingleValue("SELECT SUM(`quantity`) FROM `public_forums_donations` WHERE `postid` ='" . $post["id"] . "'")); ?></span><img class="icon" src="/images/icons/cubes<?php if ($donatedBefore){ ?>-white<?php } ?>.svg" />
                             </div>
@@ -391,17 +391,17 @@
                         if ($startPoint > 0){ ?>
                         <a href="/forum.php?thread&id=<?php echo $id; ?>&page=1">First</a>
                         <?php }
-                        
+
                         for ($i = $startPoint; $i < $startPoint+$width; $i++){ ?>
                         <a href="/forum.php?thread&id=<?php echo $id; ?>&page=<?php echo ($i+1); ?>" <?php if ($page == $i+1){ ?>class="current"<?php } ?>><?php echo number_format($i+1); ?></a>
-                        <?php } 
-                        
+                        <?php }
+
                         if ($startPoint + $width < $maxPages){?>
                         <a href="/forum.php?thread&id=<?php echo $id; ?>&page=<?php echo $maxPages; ?>">Last (<?php echo number_format($maxPages); ?>)</a>
                         <?php } ?>
                     </div>
                 <?php }
                 } ?>
-<?php                        
+<?php
     include($_SERVER["DOCUMENT_ROOT"] . "/include/page-end.php");
 ?>
