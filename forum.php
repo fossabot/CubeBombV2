@@ -289,14 +289,15 @@
 
 
                 <?php } if ($user["permissions"] >= $_PMOD){ ?>
+                <!-- Moderation bar only availabe to priviledged users-->
                 <div class="mod-bar">
-                    <div class="sa-button compact">Moderation History</div>
+                    <div class="sa-button compact red">Moderation History</div>
                     <div class="sa-button compact red" title="Prevent users from posting. Only moderators can post.">Lock Thread</div>
                     <div class="sa-button compact red" title="Remove thread, make available to moderators only.">Delete Thread</div>
                     <div class="sa-button compact red" title="Remove from forum index, make available to public via url only.">Hide Thread</div>
                     <select id="mod-move" style="display: inline-block; width: 125px; height: 25px;">
                         <?php
-                        $results = query("SELECT * FROM `public_forums_sections` WHERE `deleted` =0 LIMIT 50");
+                        $results = query("SELECT * FROM `public_forums_sections` WHERE `deleted` =0 AND `id` !=7  LIMIT 50");
                         while ($section = fetchRows($results)){ ?>
                         <option value="<?php echo $section["id"]; ?>"><?php echo htmlspecialchars($section["name"]); ?></option>
                         <?php } ?>
@@ -378,7 +379,7 @@
                         <div class="t-actions">
                             <div class="sa-button compact" class="t-quote">Quote</div>
                             <div class="sa-button compact light" class="t-quote">Report</div>
-                            Edited by StuffMaker 36 minutes ago
+                            <!-- Edited by StuffMaker 36 minutes ago -->
                         </div>
                         <div style="clear: both;"></div>
                     </div>
@@ -401,7 +402,12 @@
                         <?php } ?>
                     </div>
                 <?php }
-                } ?>
+            } else if ($isIndex){
+                $results = query("SELECT * FROM `public_forums_sections` WHERE `deleted` =0 AND `minrank` <= " . $user["permissions"]);
+                while ($section = fetchRows($results)){ ?>
+                <a href="/forum.php?forum&id=<?php echo $section["id"]; ?>"><?php echo htmlspecialchars($section["name"]); ?></a><br/>
+            <?php }
+            } ?>
 <?php
     include($_SERVER["DOCUMENT_ROOT"] . "/include/page-end.php");
 ?>

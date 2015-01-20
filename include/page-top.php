@@ -22,7 +22,7 @@
     if (!isset($breadcrumb)){
         $breadcrumb = false;
     }
-    
+
     if (!$isLoggedIn){
         header("Location:/");
         exit;
@@ -39,24 +39,26 @@
         <script src="/js/jquery.color-2.1.2.min.js"></script>
         <script src="/js/jquery.tipsy.js"></script>
         <script src="/js/page.js"></script>
-        <?php 
-            if ($pageScript != "") { 
+        <?php
+            if ($pageScript != "") {
         ?>
         <script src="<?php echo $pageScript; ?>"></script>
-        <?php 
+        <?php
             }
 
             if ($additionalScripts) {
                 echo $additionalScripts;
             }
         ?>
-        
+
         <link rel="stylesheet" type="text/css" href="/css/main.css">
-        <?php 
-            if ($pageCss != "") { 
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+        <?php
+            if ($pageCss != "") {
         ?>
         <link rel="stylesheet" type="text/css" href="<?php echo $pageCss; ?>">
-        <?php 
+        <?php
             }
 
             if ($additionalCss) {
@@ -64,30 +66,30 @@
             }
         ?>
         <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>-->
-        
+
         <title><?php echo htmlspecialchars($title); ?> | CubeBomb</title>
     </head>
-    
+
     <body>
         <div id="logo"></div>
         <div id="wrapper">
             <div id="nav" class="shadow">
                 <div class="account">
-                    <?php 
+                    <?php
                     if ($isLoggedIn){
                         echo htmlspecialchars($user["username"]);
                     }else{
                         echo "";
                     }?>
                 </div>
-                <?php 
+                <?php
                     if ($isLoggedIn){
                         echo "<a href=\"/profile.php?id=" . $user["id"] . "\">Profile</a>";
                     }
                 ?>
                 <a href="/shop.php">Shop</a>
                 <a href="/members.php">Members</a>
-                <a href="#">Forum</a>
+                <a href="/forum.php">Forum</a>
                 <a href="#">Dropoff</a>
                 <a href="#">Help</a>
                 <div class="time" title="CubeBomb Time is UTC"><?php echo date("H:i"); ?></div>
@@ -96,7 +98,7 @@
                 <?php } ?>
             </div>
             <div id="sidebar" class="shadow">
-                <?php 
+                <?php
                     if ($isLoggedIn){
                         include($_SERVER["DOCUMENT_ROOT"] . "/include/sidebar/default.php");
                     }else{

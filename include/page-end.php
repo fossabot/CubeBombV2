@@ -3,8 +3,9 @@
         </div>
     </body>
 </html>
-<?php 
+<?php
 if (isset($memcached)){
+    // Discard of memcached instance if it is in use
     $memcached->quit();
 }
 ?>
